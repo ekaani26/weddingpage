@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ekaani Wedding Hampers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#e7744c;
+    --accent-light:rgba(235,158,128,1);
+    --cream:#f8f5ef;
+    --dark:#182433;
+    --black:#0d0d0d;
+    --muted:rgba(60,72,84,0.8);
+    --white:#ffffff;
+  }
+  html{scroll-behavior:smooth;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Karla",sans-serif;
+    color:var(--dark);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* WHATSAPP TOP STRIP */
+  .top-strip{
+    background:#25D366;
+    text-align:center;
+    padding:7px 0;
+  }
+  .top-strip a{
+    display:inline-flex;align-items:center;gap:7px;
+    color:#fff;font-size:13px;font-weight:700;letter-spacing:.2px;
+  }
+  .top-strip svg{width:14px;height:14px;fill:#fff;}
+
+  /* HEADER */
+  header{
+    position:relative;
+    width:100%;
+    z-index:30;
+    background:var(--black);
+    padding:20px 0;
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:16px;
+  }
+  .logo img{height:40px;width:auto;filter:brightness(0) invert(1);}
+  .contact-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+  .contact-links a{
+    display:flex;align-items:center;gap:8px;
+    color:#fff;font-size:15px;font-weight:500;
+  }
+  .contact-links svg{width:18px;height:18px;fill:#fff;}
+  .whatsapp-pill{
+    background:#25D366;
+    padding:9px 16px;
+    border-radius:20px;
+    font-size:13px !important;
+    font-weight:700 !important;
+  }
+  .whatsapp-pill svg{width:16px;height:16px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    height:100vh;
+    min-height:560px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:#111;
+  }
+  .hero video{
+    position:absolute;top:0;left:0;
+    width:100%;height:100%;
+    object-fit:cover;
+    z-index:0;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.45) 45%, rgba(10,10,10,0.15) 100%);
+    z-index:1;
+  }
+  .hero-content{
+    position:relative;z-index:2;
+    max-width:640px;
+    padding:0 24px;
+    color:#fff;
+  }
+  .hero-content h1{
+    font-family:"Playfair Display",serif;
+    font-weight:600;
+    font-size:64px;
+    line-height:1.15;
+    margin-bottom:24px;
+    letter-spacing:-0.5px;
+  }
+  .hero-content p{
+    font-size:20px;
+    color:rgba(255,255,255,0.85);
+    margin-bottom:34px;
+    font-weight:400;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    padding:17px 44px;
+    border-radius:25px;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    border:none;
+    cursor:pointer;
+    transition:background .3s ease, transform .3s ease;
+  }
+  .btn:hover{background:#d5643c;transform:translateY(-2px);}
+  .hero-note{
+    display:block;
+    margin-top:22px;
+    font-size:13px;
+    letter-spacing:.3px;
+    color:rgba(255,255,255,0.75);
+  }
+
+  /* SECTION HEADERS */
+  .section{padding:100px 0;}
+  .section.alt{background:var(--cream);}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 50px;}
+  .eyebrow-rule{
+    width:60px;height:1px;background:var(--accent);
+    margin:0 auto 22px;position:relative;
+  }
+  .eyebrow-rule::before{
+    content:"◆";
+    position:absolute;left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    color:var(--accent);font-size:10px;
+    background:var(--white);
+    padding:0 8px;
+  }
+  .section.alt .eyebrow-rule::before{background:var(--cream);}
+  .section-head h2{
+    font-family:"Playfair Display",serif;
+    font-weight:600;
+    font-size:42px;
+    margin-bottom:14px;
+    color:var(--dark);
+  }
+  .section-head p{
+    font-size:18px;
+    color:var(--muted);
+  }
+
+  /* SLIDER (one image at a time, 9:16 portrait) */
+  .slider{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    aspect-ratio:9/16;
+    max-width:380px;
+    margin:0 auto 48px;
+    box-shadow:0 24px 48px rgba(0,0,0,0.14);
+  }
+  .slider-track{
+    display:flex;
+    height:100%;
+    transition:transform .6s ease;
+  }
+  .slide{min-width:100%;height:100%;}
+  .slide img{width:100%;height:100%;object-fit:cover;}
+  .slider-arrow{
+    position:absolute;top:50%;
+    transform:translateY(-50%);
+    width:40px;height:40px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.9);
+    border:none;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    font-size:14px;
+    color:var(--dark);
+    z-index:3;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    transition:background .2s ease;
+  }
+  .slider-arrow:hover{background:#fff;}
+  .slider-arrow.prev{left:14px;}
+  .slider-arrow.next{right:14px;}
+  .slider-dots{
+    position:absolute;bottom:16px;left:0;width:100%;
+    display:flex;justify-content:center;gap:8px;z-index:3;
+  }
+  .slider-dots .dot{
+    width:8px;height:8px;border-radius:50%;
+    background:rgba(255,255,255,0.6);
+    cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .slider-dots .dot.active{background:var(--accent);transform:scale(1.25);}
+  .cta-center{text-align:center;}
+
+  /* WHY CHOOSE US */
+  .features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:36px;
+    margin-top:10px;
+  }
+  .feature-card{text-align:center;padding:0 10px;}
+  .feature-icon{
+    width:60px;height:60px;
+    border-radius:50%;
+    background:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 18px;
+  }
+  .feature-icon svg{width:26px;height:26px;fill:var(--accent);}
+  .feature-card h3{
+    font-family:"Playfair Display",serif;
+    font-weight:600;
+    font-size:19px;
+    margin-bottom:8px;
+  }
+  .feature-card p{font-size:14.5px;color:var(--muted);}
+
+  /* KEYWORD / INTRO COPY BLOCK */
+  .intro-copy{max-width:780px;margin:0 auto;text-align:center;}
+  .intro-copy p{font-size:16px;color:var(--muted);}
+
+  /* ABOUT */
+  .about{
+    display:flex;
+    align-items:center;
+    gap:70px;
+    flex-wrap:wrap;
+  }
+  .about-text{flex:1;min-width:300px;}
+  .about-text h2{
+    font-family:"Playfair Display",serif;
+    font-weight:600;
+    font-size:38px;
+    margin-bottom:20px;
+  }
+  .about-text p{
+    font-size:16px;
+    color:var(--muted);
+    line-height:1.8;
+  }
+  .about-img{flex:1;min-width:300px;}
+  .about-img img{border-radius:2px;width:100%;height:420px;object-fit:cover;}
+
+  /* FAQ */
+  .faq-list{max-width:820px;margin:0 auto;}
+  .faq-item{
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    padding:22px 0;
+  }
+  .faq-item summary{
+    font-family:"Playfair Display",serif;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";
+    font-size:22px;
+    color:var(--accent);
+    flex-shrink:0;
+    transition:transform .25s ease;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{
+    margin-top:14px;
+    font-size:15px;
+    color:var(--muted);
+    line-height:1.7;
+  }
+
+  /* STORE PHOTO GALLERY - 2 COLUMN GRID */
+  .store-gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:40px;
+  }
+  .store-gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:14px;
+    box-shadow:0 14px 30px rgba(0,0,0,0.12);
+  }
+  .store-gallery img:last-child{grid-column:1 / -1;height:220px;}
+  @media (min-width:768px){
+    .store-gallery img{height:320px;}
+    .store-gallery img:last-child{height:320px;}
+  }
+
+  /* STORE LOCATIONS - scroll-snap slider, 1 per view */
+  .loc-slider-wrap{position:relative;max-width:520px;margin:0 auto;}
+  .loc-scroller{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .loc-scroller::-webkit-scrollbar{display:none;}
+  .loc-slide{
+    flex:0 0 100%;
+    scroll-snap-align:start;
+    padding:4px;
+  }
+  .loc-card{
+    background:var(--white);
+    border:1px solid rgba(0,0,0,0.08);
+    border-radius:10px;
+    padding:30px;
+    min-height:230px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.06);
+  }
+  .loc-card h3{
+    font-family:"Playfair Display",serif;
+    font-weight:600;
+    font-size:19px;
+    margin-bottom:12px;
+    color:var(--dark);
+  }
+  .loc-address{
+    font-size:14px;
+    color:var(--muted);
+    margin-bottom:16px;
+  }
+  .loc-phone{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--dark);
+    margin-bottom:10px;
+  }
+  .loc-direction{
+    display:inline-block;
+    font-size:13px;
+    font-weight:700;
+    color:var(--accent);
+    letter-spacing:.3px;
+    text-transform:uppercase;
+  }
+  .loc-direction:hover{text-decoration:underline;}
+  .loc-note{font-size:12.5px;color:rgba(60,72,84,0.55);font-style:italic;}
+  .loc-nav{
+    display:flex;justify-content:center;gap:14px;margin-top:22px;
+  }
+  .loc-nav button{
+    width:42px;height:42px;border-radius:50%;
+    border:1px solid rgba(0,0,0,0.12);
+    background:#fff;
+    cursor:pointer;
+    font-size:14px;
+    color:var(--dark);
+    transition:background .2s ease;
+  }
+  .loc-nav button:hover{background:var(--cream);}
+  .loc-counter{
+    text-align:center;
+    font-size:13px;
+    color:var(--muted);
+    margin-top:12px;
+  }
+
+  /* OUR CLIENTS */
+  .clients-section{padding:70px 0;background:var(--cream);}
+  .clients-card{
+    background:#fff;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:22px 18px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  }
+  .clients-card img{
+    max-width:100%;
+    max-height:44px;
+    width:auto;
+    object-fit:contain;
+    filter:grayscale(100%);
+    opacity:.75;
+    transition:filter .25s ease, opacity .25s ease;
+  }
+  .clients-card:hover img{filter:grayscale(0%);opacity:1;}
+
+  /* Mobile: static 2-column grid */
+  .clients-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .clients-marquee{display:none;}
+
+  /* Desktop: sliding marquee */
+  @media (min-width:768px){
+    .clients-grid{display:none;}
+    .clients-marquee{
+      display:block;
+      overflow:hidden;
+      -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .clients-track{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      width:max-content;
+      animation:clientsScroll 26s linear infinite;
+    }
+    .clients-marquee:hover .clients-track{animation-play-state:paused;}
+    .clients-track .clients-card{
+      flex:0 0 200px;
+      height:96px;
+    }
+    @keyframes clientsScroll{
+      from{transform:translateX(0);}
+      to{transform:translateX(-50%);}
+    }
+  }
+
+
+  /* CONTACT FORM */
+  .contact-wrap{
+    background:var(--white);
+    border-radius:25px;
+    border-top:3px solid var(--accent);
+    box-shadow:0 0 20px rgba(0,0,0,0.08);
+    max-width:900px;
+    margin:0 auto;
+    padding:60px;
+    text-align:center;
+  }
+  .contact-wrap h2{
+    font-family:"Playfair Display",serif;
+    font-weight:600;
+    font-size:32px;
+    margin-bottom:36px;
+  }
+  form{text-align:left;}
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 24px;
+    margin-bottom:20px;
+  }
+  .form-grid .full{grid-column:1 / -1;}
+  input, select, textarea{
+    width:100%;
+    padding:14px 16px;
+    border-radius:5px;
+    border:1px solid rgba(0,0,0,0.18);
+    font-family:"Karla",sans-serif;
+    font-size:15px;
+    color:var(--dark);
+    background:#fff;
+    outline:none;
+  }
+  input:focus, select:focus, textarea:focus{border-color:var(--accent);}
+  textarea{resize:none;min-height:100px;}
+  select{cursor:pointer;color:#555;}
+  .form-submit{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:18px;
+    border-radius:25px;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    cursor:pointer;
+    margin-top:10px;
+    transition:background .3s ease;
+  }
+  .form-submit:hover{background:#d5643c;}
+
+  /* FOOTER */
+  footer{
+    background:var(--black);
+    color:rgba(255,255,255,0.7);
+    padding:70px 0 0;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1.2fr;
+    gap:40px;
+    padding-bottom:50px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-col h4{
+    font-family:"Playfair Display",serif;
+    font-size:17px;
+    color:#fff;
+    margin-bottom:20px;
+    font-weight:600;
+  }
+  .footer-col p{
+    font-size:14px;
+    line-height:1.8;
+    color:rgba(255,255,255,0.6);
+    margin-bottom:16px;
+  }
+  .footer-col ul{list-style:none;}
+  .footer-col ul li{margin-bottom:12px;}
+  .footer-col ul li a{
+    font-size:14px;
+    color:rgba(255,255,255,0.65);
+    transition:color .2s ease;
+  }
+  .footer-col ul li a:hover{color:var(--accent);}
+  .footer-logo img{height:32px;filter:brightness(0) invert(1);margin-bottom:18px;}
+  .footer-social{display:flex;gap:14px;margin-top:6px;}
+  .footer-social a{
+    width:36px;height:36px;border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease;
+  }
+  .footer-social a:hover{background:var(--accent);}
+  .footer-social svg{width:16px;height:16px;fill:#fff;}
+  .footer-bottom{
+    padding:24px 0;
+    text-align:center;
+    font-size:13px;
+    color:rgba(255,255,255,0.45);
+  }
+
+  /* FOOTER LOCATION AUTHORITY BLOCK */
+  .footer-locations{
+    padding:34px 0;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-locations h4{
+    font-family:"Playfair Display",serif;
+    font-size:15px;
+    font-weight:600;
+    color:rgba(255,255,255,0.85);
+    margin-bottom:16px;
+    letter-spacing:.3px;
+  }
+  .footer-locations ul{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 10px;
+  }
+  .footer-locations ul li a{
+    display:inline-block;
+    font-size:12.5px;
+    color:rgba(255,255,255,0.55);
+    background:rgba(255,255,255,0.06);
+    padding:7px 14px;
+    border-radius:20px;
+    transition:background .2s ease, color .2s ease;
+  }
+  .footer-locations ul li a:hover{background:var(--accent);color:#fff;}
+
+  /* THANK YOU OVERLAY */
+  .thankyou-overlay{
+    display:none;
+    position:fixed;inset:0;z-index:200;
+    background:rgba(13,13,13,0.72);
+    align-items:center;justify-content:center;
+    padding:24px;
+  }
+  .thankyou-overlay.active{display:flex;}
+  .thankyou-card{
+    background:var(--white);
+    border-radius:20px;
+    max-width:440px;
+    width:100%;
+    padding:48px 36px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 30px 60px rgba(0,0,0,0.35);
+    animation:tyPop .35s ease;
+  }
+  @keyframes tyPop{from{opacity:0;transform:scale(.92) translateY(10px);}to{opacity:1;transform:scale(1) translateY(0);}}
+  .thankyou-close{
+    position:absolute;top:16px;right:18px;
+    background:none;border:none;
+    font-size:22px;line-height:1;
+    color:var(--muted);cursor:pointer;
+  }
+  .thankyou-icon{
+    width:64px;height:64px;border-radius:50%;
+    background:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 22px;
+  }
+  .thankyou-icon svg{width:30px;height:30px;fill:var(--accent);}
+  .thankyou-card h3{
+    font-family:"Playfair Display",serif;
+    font-weight:600;font-size:26px;
+    margin-bottom:12px;color:var(--dark);
+  }
+  .thankyou-card p{
+    font-size:15px;color:var(--muted);
+    margin-bottom:30px;line-height:1.7;
+  }
+  .thankyou-actions{display:flex;flex-direction:column;gap:14px;}
+  .ty-btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 20px;border-radius:25px;
+    font-weight:700;font-size:13.5px;
+    letter-spacing:.6px;text-transform:uppercase;
+    border:none;cursor:pointer;
+    transition:background .3s ease, transform .3s ease, opacity .3s ease;
+  }
+  .ty-btn svg{width:18px;height:18px;flex-shrink:0;}
+  .ty-btn.whatsapp{background:#25D366;color:#fff;}
+  .ty-btn.whatsapp:hover{background:#1fb857;transform:translateY(-2px);}
+  .ty-btn.watch{background:var(--white);color:var(--dark);border:1.5px solid rgba(0,0,0,0.15);}
+  .ty-btn.watch:hover{background:var(--cream);transform:translateY(-2px);}
+
+  /* MOBILE STICKY CALL/QUOTE BAR */
+  .mobile-sticky-bar{
+    display:none;
+    position:fixed;
+    bottom:0;left:0;width:100%;
+    z-index:100;
+    background:#fff;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.15);
+  }
+  .mobile-sticky-bar a{
+    flex:1;
+    text-align:center;
+    padding:16px 10px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+  }
+  .mobile-sticky-bar .call-btn{background:var(--black);color:#fff;}
+  .mobile-sticky-bar .quote-btn{background:var(--accent);color:#fff;}
+  .mobile-sticky-bar svg{width:16px;height:16px;fill:#fff;}
+
+  /* section background image style for contact wrap section */
+  .contact-section{
+    scroll-margin-top:70px;
+    position:relative;
+    padding:120px 0 160px;
+    background:
+      linear-gradient(rgba(20,20,20,.35), rgba(20,20,20,.35)),
+      url('https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459');
+    background-size:cover;
+    background-position:center;
+  }
+
+  @media (max-width:1024px){
+    .hero-content h1{font-size:48px;}
+    .features{grid-template-columns:repeat(2,1fr);gap:30px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:767px){
+    header{padding:16px 0;}
+    .logo img{height:32px;}
+    .contact-links{gap:0;}
+    .contact-links a span.label{display:none;}
+    .contact-links a{padding:8px;}
+    .contact-links a[href^="mailto"]{display:none;}
+    .whatsapp-pill{padding:8px 10px;}
+
+    .hero{
+      height:auto;
+      min-height:auto;
+      flex-direction:column;
+      align-items:stretch;
+      background:#fff;
+    }
+    .hero video{position:relative;width:100%;height:320px;object-fit:cover;}
+    .hero::after{display:none;}
+    .hero-content{
+      position:relative;z-index:2;max-width:100%;
+      padding:32px 24px 40px;color:var(--dark);text-align:center;
+    }
+    .hero-content h1{font-size:28px;color:var(--dark);margin-bottom:14px;}
+    .hero-content p{font-size:16px;color:var(--muted);margin-bottom:26px;}
+    .hero-note{color:var(--muted);}
+
+    .section{padding:56px 0;}
+    .section-head{padding:0 8px;margin-bottom:32px;}
+    .section-head h2{font-size:26px;}
+
+    /* FULL-WIDTH EDGE-TO-EDGE SLIDER ON MOBILE */
+    .slider{
+      max-width:none;
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      margin-right:calc(50% - 50vw);
+      border-radius:0;
+      box-shadow:none;
+      aspect-ratio:4/5;
+      margin-bottom:34px;
+    }
+    .slider-arrow{width:36px;height:36px;}
+    .slider-arrow.prev{left:10px;}
+    .slider-arrow.next{right:10px;}
+    .cta-center{padding:0 24px;}
+
+    .about{flex-direction:column;gap:0;}
+    .about-text{padding:0 24px;order:2;margin-top:28px;}
+    .about-img{order:1;}
+    .about-img img{
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      margin-right:calc(50% - 50vw);
+      border-radius:0;
+      height:340px;
+    }
+
+    .contact-wrap{padding:32px 20px;}
+    .form-grid{grid-template-columns:1fr;}
+    .features{grid-template-columns:1fr 1fr;gap:26px;}
+    .footer-grid{grid-template-columns:1fr;gap:36px;}
+
+    .mobile-sticky-bar{display:flex;}
+    body{padding-bottom:58px;}
+  }
+  @media (min-width:768px){
+    .mobile-sticky-bar{display:none !important;}
+
+    /* DESKTOP: SHOW ALL 4 PRODUCT IMAGES SIDE BY SIDE INSTEAD OF ONE-AT-A-TIME */
+    .slider{
+      max-width:100%;
+      aspect-ratio:auto;
+      border-radius:0;
+      box-shadow:none;
+      overflow:visible;
+    }
+    .slider-track{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:22px;
+      height:auto;
+      transform:none !important;
+      transition:none;
+    }
+    .slide{
+      min-width:0;
+      height:auto;
+      aspect-ratio:3/4;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 18px 36px rgba(0,0,0,0.12);
+    }
+    .slider-arrow, .slider-dots{display:none;}
+
+    /* DESKTOP: STORE LOCATIONS 4 PER SLIDE */
+    .loc-slider-wrap{max-width:100%;}
+    .loc-scroller{gap:22px;}
+    .loc-slide{flex:0 0 calc(25% - 16.5px);padding:0;}
+    .loc-card{min-height:260px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ekaani",
+  "description": "Ekaani designs and curates luxury wedding hampers, welcome kits, and return gifts for celebrations across India.",
+  "email": "info@ekaani.com",
+  "telephone": "+91-9811099999",
+  "image": "https://cdn.shopify.com/s/files/1/0748/5014/0446/files/Layer_x0020_1_83f4e6f8-cf11-4a6c-9d21-9bb72e6775d8.svg?v=1683268225",
+  "priceRange": "$$-$$$",
+  "areaServed": "IN",
+  "sameAs": [],
+  "department": [
+    { "@type": "LocalBusiness", "name": "Ekaani - South Ex 2, Delhi", "address": { "@type": "PostalAddress", "streetAddress": "E-22, Second Floor, South Ex-2 Main Market, Above Miniso", "addressLocality": "New Delhi", "addressRegion": "Delhi", "postalCode": "110049", "addressCountry": "IN" }, "telephone": "+91-9811123226" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Defence Colony, Delhi", "address": { "@type": "PostalAddress", "streetAddress": "A-274, Defence Colony, Bhisham Pitamaha Marg", "addressLocality": "New Delhi", "addressRegion": "Delhi", "postalCode": "110024", "addressCountry": "IN" }, "telephone": "+91-9811123226" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Khan Market, Delhi", "address": { "@type": "PostalAddress", "streetAddress": "55A, Khan Market, Rabindra Nagar", "addressLocality": "New Delhi", "addressRegion": "Delhi", "postalCode": "110003", "addressCountry": "IN" }, "telephone": "+91-9718294995" },
+    { "@type": "LocalBusiness", "name": "Ekaani - MG Road, Gurgaon", "address": { "@type": "PostalAddress", "streetAddress": "No. 432, 433, Basement Opp. Khasra 434, Mehrauli-Gurgaon Rd, Sultanpur", "addressLocality": "New Delhi", "addressRegion": "Delhi", "postalCode": "110030", "addressCountry": "IN" }, "telephone": "+91-9911501509" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Breach Candy, Mumbai", "address": { "@type": "PostalAddress", "streetAddress": "Sagar Mansion Building, Warden Rd, Breach Candy, Cumballa Hill", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "postalCode": "400026", "addressCountry": "IN" }, "telephone": "+91-9833511899" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Juhu, Mumbai", "address": { "@type": "PostalAddress", "streetAddress": "Shop No. 9-10, Valencia Condominium, Juhu Tara Rd", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "postalCode": "400049", "addressCountry": "IN" }, "telephone": "+91-9833511899" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Khar, Mumbai", "address": { "@type": "PostalAddress", "streetAddress": "A-2, Prem Sagar, Next to City Walk Shoes, Linking Road, Khar", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "postalCode": "400052", "addressCountry": "IN" }, "telephone": "+91-9833511899" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Ahmedabad", "address": { "@type": "PostalAddress", "streetAddress": "Deora House, Mithakhali 6 Roads, Navrangpura", "addressLocality": "Ahmedabad", "addressRegion": "Gujarat", "postalCode": "380009", "addressCountry": "IN" }, "telephone": "+91-7405318000" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Amaaris, Bengaluru", "address": { "@type": "PostalAddress", "streetAddress": "2/2, Lavelle Road, Opp. Hulkul Brigade Centre, Ashok Nagar", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "postalCode": "560001", "addressCountry": "IN" }, "telephone": "+91-9663902544" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Chandigarh", "address": { "@type": "PostalAddress", "streetAddress": "Nexus Elante Mall, 2nd Floor", "addressLocality": "Chandigarh", "postalCode": "160002", "addressCountry": "IN" }, "telephone": "+91-9041442200" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Guwahati", "address": { "@type": "PostalAddress", "streetAddress": "Pancham Tower, 1st Floor, B-1, GS Rd, Ulubari", "addressLocality": "Guwahati", "addressRegion": "Assam", "postalCode": "781007", "addressCountry": "IN" }, "telephone": "+91-9864021056" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Hyderabad", "address": { "@type": "PostalAddress", "streetAddress": "Plot No. 1 & 2, Survey No. 403/1, Nandagiri Hills, Jubilee Hills", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "postalCode": "500033", "addressCountry": "IN" }, "telephone": "+91-9650360047" },
+    { "@type": "LocalBusiness", "name": "Ekaani Kinerhs Collection, Pune", "address": { "@type": "PostalAddress", "streetAddress": "Shop C4, Hermes Waves, Prathmesh Society, Kalyani Nagar", "addressLocality": "Pune", "addressRegion": "Maharashtra", "postalCode": "411016", "addressCountry": "IN" }, "telephone": "+91-9820079349" },
+    { "@type": "LocalBusiness", "name": "Ekaani - Jaipur", "address": { "@type": "PostalAddress", "streetAddress": "#37 & 38, Rathore Nagar, Vaishali Nagar", "addressLocality": "Jaipur", "addressRegion": "Rajasthan", "postalCode": "302021", "addressCountry": "IN" }, "telephone": "+91-9929006555" },
+    { "@type": "LocalBusiness", "name": "Ekaani Studio, Kolkata", "address": { "@type": "PostalAddress", "streetAddress": "Neelamber Building, 1st Floor, 28B, Shakespeare Sarani", "addressLocality": "Kolkata", "addressRegion": "West Bengal", "postalCode": "700017", "addressCountry": "IN" }, "telephone": "+91-9163075151" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What types of wedding hampers does Ekaani offer?", "acceptedAnswer": { "@type": "Answer", "text": "We offer wedding welcome hampers, wedding return gifts, decor gifts, and custom luxury gift hampers for weddings of every size, designed and packaged to match your celebration's theme." } },
+    { "@type": "Question", "name": "Can I customize my wedding hamper?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. From packaging and ribbon colors to personalized tags and branding, every wedding hamper can be tailored to your preferences and wedding theme." } },
+    { "@type": "Question", "name": "Do you deliver wedding hampers pan-India?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we deliver wedding hampers and return gifts to venues and residential addresses across India, including for destination weddings." } },
+    { "@type": "Question", "name": "What is the minimum order quantity for wedding return gifts?", "acceptedAnswer": { "@type": "Answer", "text": "We cater to both small, intimate weddings and large celebrations. Share your guest count and requirements in the enquiry form and our team will guide you." } },
+    { "@type": "Question", "name": "How do I get a quote for my wedding hamper order?", "acceptedAnswer": { "@type": "Answer", "text": "Simply fill out the enquiry form or call us directly, and our team will get back to you with hamper options tailored to your wedding date, city, and budget." } },
+    { "@type": "Question", "name": "Why choose Ekaani over other wedding hamper brands?", "acceptedAnswer": { "@type": "Answer", "text": "Every hamper is designed in-house rather than picked from a generic catalog. With 15 physical stores across India, you can see and feel the collection in person before you order." } },
+    { "@type": "Question", "name": "How much do wedding hampers cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on the hamper size, materials, and quantity ordered. Share your budget per gift and guest count in the enquiry form for a detailed quote within one business day." } },
+    { "@type": "Question", "name": "How far in advance should I place my order?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend booking 6-8 weeks before your wedding date for custom hampers, especially for bulk orders above 200 pieces." } },
+    { "@type": "Question", "name": "Can I see samples before placing a bulk order?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can request a sample hamper or visit any of our 15 stores across India to view and feel the collection in person before confirming your full order." } },
+    { "@type": "Question", "name": "Do you offer discounts on bulk wedding orders?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, pricing is tiered by quantity, and larger orders receive better per-piece rates." } },
+    { "@type": "Question", "name": "What if I'm not happy with my order?", "acceptedAnswer": { "@type": "Answer", "text": "Every hamper is quality-checked before dispatch. If anything arrives damaged or doesn't match what was confirmed, contact our team within 48 hours of delivery and we'll make it right." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="top-strip">
+  <a href="https://wa.me/919910926757?text=Hi%20Ekaani%21%20I%27m%20interested%20in%20your%20wedding%20hampers%20%26%20return%20gifts.%20Could%20you%20please%20share%20more%20details%20and%20pricing%3F" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.6 1.1 2.8c.1.2 2 3 4.9 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg>
+    Chat with us on WhatsApp — +91 9910926757
+  </a>
+</div>
+
+<header id="top">
+  <div class="container header-inner">
+    <div class="logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/Layer_x0020_1_83f4e6f8-cf11-4a6c-9d21-9bb72e6775d8.svg?v=1683268225" alt="Ekaani">
+    </div>
+    <div class="contact-links">
+      <a href="tel:+919811099999">
+        <svg viewBox="0 0 24 24"><path d="M21,8h-7V6h7V8z"/><path d="M12,7l4,4V3L12,7z"/><path d="M20.023,15.488c-0.63-0.015-1.423-0.052-1.924-0.14c-0.542-0.096-1.194-0.282-1.653-0.425c-0.36-0.112-0.752-0.013-1.019,0.253L13.21,17.38c-1.532-0.807-2.759-1.747-3.798-2.792c-1.045-1.039-1.985-2.266-2.792-3.798l2.204-2.218C9.09,8.305,9.189,7.913,9.077,7.553c-0.142-0.458-0.329-1.11-0.424-1.652C8.564,5.4,8.528,4.607,8.512,3.977C8.499,3.432,8.055,3,7.51,3H4C3.562,3,3,3.328,3,4c0,4.539,1.84,8.874,4.966,12.034C11.126,19.16,15.461,21,20,21c0.672,0,1-0.562,1-1v-3.51C21,15.945,20.568,15.501,20.023,15.488z"/></svg>
+        <span class="label">+91 9811099999</span>
+      </a>
+      <a href="mailto:info@ekaani.com">
+        <svg viewBox="0 0 32 32"><path d="M 3 8 L 3 26 L 29 26 L 29 8 Z M 7.3125 10 L 24.6875 10 L 16 15.78125 Z M 5 10.875 L 15.4375 17.84375 L 16 18.1875 L 16.5625 17.84375 L 27 10.875 L 27 24 L 5 24 Z"/></svg>
+        <span class="label">info@ekaani.com</span>
+      </a>
+      <a href="https://wa.me/919910926757?text=Hi%20Ekaani%21%20I%27m%20interested%20in%20your%20wedding%20hampers%20%26%20return%20gifts.%20Could%20you%20please%20share%20more%20details%20and%20pricing%3F" target="_blank" rel="noopener" class="whatsapp-pill">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.6 1.1 2.8c.1.2 2 3 4.9 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg>
+        <span class="label">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <video id="heroVideo" autoplay muted loop playsinline>
+    <source src="https://cdn.shopify.com/videos/c/o/v/5e0cd1348ad14bdb919351c552bedb2f.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>More Than Just Wedding Hampers</h1>
+    <p>Elegant Keepsakes, Gifts of Lasting Love.</p>
+    <a href="#form" class="btn">Get a Free Quote</a>
+    <span class="hero-note">Custom Wedding Hampers &middot; Pan-India Delivery &middot; Bulk Orders Welcome</span>
+  </div>
+</section>
+
+<!-- INTRO / SEO COPY -->
+<section class="section" style="padding-bottom:60px;">
+  <div class="container">
+    <div class="intro-copy">
+      <div class="eyebrow-rule"></div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:32px;margin-bottom:18px;">Luxury Wedding Hampers &amp; Wedding Return Gifts</h2>
+      <p>Ekaani designs premium wedding hampers, welcome kits, and return gifts for celebrations across India — blending traditional craftsmanship with contemporary design for guest hampers, sangeet favors, and personalized gift boxes, from intimate ceremonies to destination weddings and bulk orders of 500+.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section alt" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Why Couples Choose Ekaani</h2>
+      <p>Trusted wedding gifting partner, from concept to doorstep delivery</p>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16.8 6.5 19.5l1-6.2L3 8.9 9 8z"/></svg></div>
+        <h3>Premium Craftsmanship</h3>
+        <p>Hand-finished wedding hampers made with quality materials and meticulous detail.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v4H4zM4 10h16v10H4z" fill-rule="evenodd" clip-rule="evenodd"/></svg></div>
+        <h3>Fully Customizable</h3>
+        <p>Personalize packaging, contents, and branding to match your wedding theme.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 5 9 11 9 11s9-6 9-11c0-5-4-9-9-9zm0 12a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+        <h3>Pan-India Delivery</h3>
+        <p>We ship wedding hampers and return gifts to venues and homes across India.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2zM10 4h4v2h-4V4z"/></svg></div>
+        <h3>Bulk Order Ready</h3>
+        <p>From intimate ceremonies to large weddings, we scale to your guest count.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Celebrate Your Wedding with Timeless Elegance</h2>
+      <p>An artistic blend of tradition and splendor</p>
+    </div>
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/17_910675b3-4f75-41d3-a9df-60a731c9963d.jpg?v=1783925440" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459" alt="Ekaani wedding hamper"></div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+      <div class="slider-dots"></div>
+    </div>
+    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Unveil a Hamper Beyond Compare</h2>
+      <p>Provide elegant tokens of gratitude to your guests</p>
+    </div>
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/14-38.jpg?v=1784361188" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/17_910675b3-4f75-41d3-a9df-60a731c9963d.jpg?v=1783925440" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Ekaani wedding hamper"></div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+      <div class="slider-dots"></div>
+    </div>
+    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Exquisite Hampers for Discerning Tastes</h2>
+      <p>Celebrate your wedding with luxury, sophisticated gifting</p>
+    </div>
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/14-38.jpg?v=1784361188" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="Ekaani wedding hamper"></div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+      <div class="slider-dots"></div>
+    </div>
+    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Gift a Box of Luxury</h2>
+      <p>More than just a hamper, it's a spectacular experience</p>
+    </div>
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/17_910675b3-4f75-41d3-a9df-60a731c9963d.jpg?v=1783925440" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/14-38.jpg?v=1784361188" alt="Ekaani wedding hamper"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Ekaani wedding hamper"></div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+      <div class="slider-dots"></div>
+    </div>
+    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container about">
+    <div class="about-text">
+      <div class="eyebrow-rule" style="margin-left:0"></div>
+      <h2>About Ekaani</h2>
+      <p>Ekaani is a name that represents trust, superior craftsmanship, extravagant designs, international aesthetics, unrivaled quality, and a unique style. Leave a lasting impression that reflects the grandeur of your wedding. Ekaani, India's trusted source for luxury wedding hampers, offers exquisite collections designed to create lasting memories.</p>
+    </div>
+    <div class="about-img">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="About Ekaani">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about ordering wedding hampers from Ekaani</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>What types of wedding hampers does Ekaani offer?</summary>
+        <p>We offer wedding welcome hampers, wedding return gifts, decor gifts, and custom luxury gift hampers for weddings of every size, designed and packaged to match your celebration's theme.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I customize my wedding hamper?</summary>
+        <p>Yes. From packaging and ribbon colors to personalized tags and branding, every wedding hamper can be tailored to your preferences and wedding theme.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you deliver wedding hampers pan-India?</summary>
+        <p>Yes, we deliver wedding hampers and return gifts to venues and residential addresses across India, including for destination weddings.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is the minimum order quantity for wedding return gifts?</summary>
+        <p>We cater to both small, intimate weddings and large celebrations. Share your guest count and requirements in the form below and our team will guide you.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get a quote for my wedding hamper order?</summary>
+        <p>Simply fill out the enquiry form or call us directly — our team will get back to you with hamper options tailored to your wedding date, city, and budget.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why choose Ekaani over other wedding hamper brands?</summary>
+        <p>Every hamper is designed in-house rather than picked from a generic catalog, so packaging, contents, and branding are built around your wedding theme. With 15 physical stores across India, you can see and feel the collection in person before you order — not just from photos — and get a dedicated point of contact from enquiry through delivery.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What makes Ekaani different from mass-market gifting stores?</summary>
+        <p>We focus specifically on wedding gifting rather than treating hampers as one category among many. That means deeper customization options, materials chosen for durability and presentation, and a team that understands wedding timelines — so orders are planned around your function dates, not generic shipping windows.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much do wedding hampers cost?</summary>
+        <p>Pricing depends on the hamper size, materials, and quantity ordered. Share your budget per gift and guest count in the enquiry form and our team will send you curated options and a detailed quote within one business day, with no obligation to buy.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How far in advance should I place my order?</summary>
+        <p>We recommend booking 6-8 weeks before your wedding date for custom hampers, especially for bulk orders above 200 pieces. Smaller or ready collections can often be arranged faster — mention your wedding date in the form and we'll confirm what's possible.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I see samples before placing a bulk order?</summary>
+        <p>Yes. You can request a sample hamper or visit any of our 15 stores across India to view and feel the collection in person before confirming your full order.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you offer discounts on bulk wedding orders?</summary>
+        <p>Yes, pricing is tiered by quantity, and larger orders receive better per-piece rates. Let us know your expected quantity in the enquiry form and we'll include applicable bulk pricing in your quote.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I'm not happy with my order?</summary>
+        <p>Every hamper is quality-checked before dispatch. If anything arrives damaged or doesn't match what was confirmed, contact our team within 48 hours of delivery and we'll make it right.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- STORE LOCATIONS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Visit an Ekaani Store</h2>
+      <p>15 stores across India — walk in to see our wedding hamper collections in person</p>
+    </div>
+
+    <div class="store-gallery">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/IMG_2610.jpg?v=1783590358" alt="Ekaani store interior">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/DSC2720.jpg?v=1783590301" alt="Ekaani store display">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/STS_393.jpg?v=1783590288" alt="Ekaani store front">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/STS_496.jpg?v=1783590287" alt="Ekaani store collection">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/9_4.jpg?v=1783494709" alt="Ekaani store showcase">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/2_3_1.jpg?v=1783494708" alt="Ekaani store hampers on display">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/5_4_1.jpg?v=1783494783" alt="Ekaani store interior detail">
+    </div>
+
+    <div class="loc-slider-wrap">
+    <div class="loc-scroller" id="locScroller">
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Defence Colony, Delhi</h3>
+        <p class="loc-address">A-274, Defence Colony, Bhisham Pitamaha Marg, New Delhi, Delhi, 110024, India</p>
+        <a href="tel:+919811123226" class="loc-phone">📞 +91 9811123226</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=28.5736,77.2288" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Ahmedabad</h3>
+        <p class="loc-address">Deora House, Mithakhali 6 Roads, Navrangpura, Near LG Showroom, Rashmi Society, Ahmedabad, Gujarat, 380009, India</p>
+        <a href="tel:+917405318000" class="loc-phone">📞 +91 7405318000</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=23.0318,72.5647" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Amaaris, Bengaluru</h3>
+        <p class="loc-address">2/2, Lavelle Road, Opp. Hulkul Brigade Centre, Ashok Nagar, Bengaluru, Karnataka, 560001, India</p>
+        <a href="tel:+919663902544" class="loc-phone">📞 +91 9663902544</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=12.9679,77.5961" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Breach Candy, Mumbai</h3>
+        <p class="loc-address">Sagar Mansion Building, Warden Rd, Breach Candy, Cumballa Hill, Mumbai, Maharashtra, 400026, India</p>
+        <a href="tel:+919833511899" class="loc-phone">📞 +91 9833511899</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=18.9754,72.8065" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Chandigarh</h3>
+        <p class="loc-address">Nexus Elante Mall, 2nd Floor, Opposite Cafe Coffee Day, Chandigarh, 160002, India</p>
+        <a href="tel:+919041442200" class="loc-phone">📞 +91 9041442200</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=30.7057,76.8009" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Guwahati</h3>
+        <p class="loc-address">Pancham Tower, 1st Floor, B-1, GS Rd, Ulubari, Guwahati, Assam, 781007, India</p>
+        <a href="tel:+919864021056" class="loc-phone">📞 +91 9864021056</a><br>
+        <span class="loc-note">Directions available on request</span>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Hyderabad</h3>
+        <p class="loc-address">Plot No. 1 &amp; 2, Survey No. 403/1, Nandagiri Hills, Next to BMW Showroom, Jubilee Hills, Nr. Film Nagar, Hyderabad, Telangana, 500033, India</p>
+        <a href="tel:+919650360047" class="loc-phone">📞 +91 9650360047</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=17.4269,78.4048" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Juhu, Mumbai</h3>
+        <p class="loc-address">Shop No. 9-10, Valencia Condominium, Juhu Tara Rd, Near Hotel Ajanta Palace, Opp. Estella, Mumbai, Maharashtra, 400049, India</p>
+        <a href="tel:+919833511899" class="loc-phone">📞 +91 9833511899</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=19.0911047,72.8279405" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Khan Market, Delhi</h3>
+        <p class="loc-address">55A, Khan Market, Rabindra Nagar, New Delhi, Delhi, 110003, India</p>
+        <a href="tel:+919718294995" class="loc-phone">📞 +91 9718294995</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=28.6004,77.2273" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Khar, Mumbai</h3>
+        <p class="loc-address">A-2, Prem Sagar, Next to City Walk Shoes, Linking Road, Khar, Mumbai, Maharashtra, 400052, India</p>
+        <a href="tel:+919833511899" class="loc-phone">📞 +91 9833511899</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=19.0686,72.8333" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - South Ex 2, Delhi</h3>
+        <p class="loc-address">E-22, Second Floor, South Ex-2 Main Market, Above Miniso, New Delhi, Delhi, 110049, India</p>
+        <a href="tel:+919811123226" class="loc-phone">📞 +91 9811123226</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=28.568,77.2194" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani Kinerhs Collection, Pune</h3>
+        <p class="loc-address">Shop C4, Hermes Waves, Prathmesh Society, Diagonally Opp. Elephant Co., Kalyani Nagar, Pune, Maharashtra, 411016, India</p>
+        <a href="tel:+919820079349" class="loc-phone">📞 +91 9820079349</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=18.5463,73.9008" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - MG Road</h3>
+        <p class="loc-address">No. 432, 433, Basement Opp. Khasra 434, Mehrauli-Gurgaon Rd, Sultanpur, New Delhi, Delhi, 110030, India</p>
+        <a href="tel:+919911501509" class="loc-phone">📞 +91 9911501509</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=28.4965,77.1" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani - Jaipur</h3>
+        <p class="loc-address">#37 &amp; 38, Rathore Nagar, Vaishali Nagar, Jaipur, Rajasthan, 302021, India</p>
+        <a href="tel:+919929006555" class="loc-phone">📞 +91 9929006555</a><br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=26.9105,75.7527" target="_blank" class="loc-direction">Get Directions →</a>
+      </div>
+      </div>
+
+      <div class="loc-slide">
+      <div class="loc-card">
+        <h3>Ekaani Studio, Kolkata</h3>
+        <p class="loc-address">Neelamber Building, 1st Floor, 28B, Shakespeare Sarani, Kolkata, West Bengal, 700017, India</p>
+        <a href="tel:+919163075151" class="loc-phone">📞 +91 9163075151</a><br>
+        <span class="loc-note">Directions available on request</span>
+      </div>
+      </div>
+
+    </div>
+    <div class="loc-nav">
+      <button id="locPrev" aria-label="Previous store">&#10094;</button>
+      <button id="locNext" aria-label="Next store">&#10095;</button>
+    </div>
+    <p class="loc-counter" id="locCounter">1 / 15</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="form">
+  <div class="container">
+    <div class="contact-wrap">
+      <h2>Talk to our Experts</h2>
+      <form id="enquiryForm" action="https://formsubmit.co/testmailekaani@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Wedding Hamper Enquiry - Ekaani Website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-grid">
+          <input type="text" name="Full Name" placeholder="Full Name *" required>
+          <input type="tel" name="Phone Number" placeholder="Phone Number *" required>
+          <input type="text" name="City" placeholder="Your City *" required>
+          <input type="text" name="Wedding Date" placeholder="Wedding Date *" required>
+          <select name="Type of Hamper" required>
+            <option value="" disabled selected>Type of Hamper *</option>
+            <option value="Wedding Welcome Hamper">Wedding Welcome Hamper</option>
+            <option value="Return Gift Hamper">Return Gift Hamper</option>
+            <option value="Guest Gift Hamper">Guest Gift Hamper</option>
+            <option value="Custom Hamper">Custom Hamper</option>
+          </select>
+          <select name="Quantity Required" required>
+            <option value="" disabled selected>Quantity Required *</option>
+            <option value="0-50 pcs">0-50 pcs</option>
+            <option value="50-100 pcs">50-100 pcs</option>
+            <option value="100-200 pcs">100-200 pcs</option>
+            <option value="200-500 pcs">200-500 pcs</option>
+            <option value="Above 500 pcs">Above 500 pcs</option>
+          </select>
+          <textarea class="full" name="Additional Information" placeholder="Additional Information *" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enquire Now</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- OUR CLIENTS -->
+<section class="clients-section">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:34px;">
+      <div class="eyebrow-rule"></div>
+      <h2 style="font-size:28px;">Trusted By Leading Brands</h2>
+      <p>Corporate and bulk wedding gifting partners who trust Ekaani</p>
+    </div>
+
+    <!-- Mobile: 2-column static grid -->
+    <div class="clients-grid">
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADANI.png?v=1783321913" alt="Adani"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak"></div>
+    </div>
+
+    <!-- Desktop: sliding marquee (logos duplicated for seamless loop) -->
+    <div class="clients-marquee">
+      <div class="clients-track">
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADANI.png?v=1783321913" alt="Adani"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak"></div>
+        <!-- duplicate set for seamless infinite scroll -->
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADANI.png?v=1783321913" alt="Adani"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/Layer_x0020_1_83f4e6f8-cf11-4a6c-9d21-9bb72e6775d8.svg?v=1683268225" alt="Ekaani">
+        </div>
+        <p>Ekaani designs and curates luxury wedding hampers, welcome kits, and return gifts for celebrations across India — trusted by families for premium craftsmanship and personalized wedding gifting.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.85.23 2.5.48.68.27 1.25.62 1.82 1.19.57.57.92 1.14 1.19 1.82.25.65.43 1.4.48 2.5.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.23 1.85-.48 2.5a4.9 4.9 0 01-1.19 1.82 4.9 4.9 0 01-1.82 1.19c-.65.25-1.4.43-2.5.48-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.85-.23-2.5-.48a4.9 4.9 0 01-1.82-1.19 4.9 4.9 0 01-1.19-1.82c-.25-.65-.43-1.4-.48-2.5C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.23-1.85.48-2.5.27-.68.62-1.25 1.19-1.82A4.9 4.9 0 015.55 2.6c.65-.25 1.4-.43 2.5-.48C9.15 2.06 9.4 2 12 2z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.6 1.1 2.8c.1.2 2 3 4.9 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Our Collections</a></li>
+          <li><a href="#">About Ekaani</a></li>
+          <li><a href="#">Frequently Asked Questions</a></li>
+          <li><a href="#form">Get a Quote</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Popular Searches</h4>
+        <ul>
+          <li><a href="#form">Wedding Hampers</a></li>
+          <li><a href="#form">Wedding Return Gifts</a></li>
+          <li><a href="#form">Wedding Welcome Kits</a></li>
+          <li><a href="#form">Sangeet Favors</a></li>
+          <li><a href="#form">Corporate Wedding Gifts</a></li>
+          <li><a href="#form">Destination Wedding Gifting</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <p>Call us for wedding hamper enquiries, bulk orders, and store visits.</p>
+        <a href="tel:+919811099999" style="display:block;color:#fff;font-weight:600;margin-bottom:8px;">📞 +91 9811099999</a>
+        <a href="mailto:info@ekaani.com" style="display:block;color:#fff;font-weight:600;margin-bottom:14px;">✉ info@ekaani.com</a>
+        <p style="margin-bottom:6px;">15 stores across India, including Delhi, Mumbai, Bengaluru, Hyderabad, Jaipur, Pune, Chandigarh, Ahmedabad, Guwahati &amp; Kolkata.</p>
+      </div>
+    </div>
+
+    <div class="footer-locations">
+      <h4>Our Store Locations</h4>
+      <ul>
+        <li><a href="#form">Ekaani Ahmedabad</a></li>
+        <li><a href="#form">Ekaani Amaaris, Bengaluru</a></li>
+        <li><a href="#form">Ekaani Breach Candy, Mumbai</a></li>
+        <li><a href="#form">Ekaani Chandigarh</a></li>
+        <li><a href="#form">Ekaani Defence Colony, Delhi</a></li>
+        <li><a href="#form">Ekaani Guwahati</a></li>
+        <li><a href="#form">Ekaani Hyderabad</a></li>
+        <li><a href="#form">Ekaani Juhu, Mumbai</a></li>
+        <li><a href="#form">Ekaani Khan Market, Delhi</a></li>
+        <li><a href="#form">Ekaani Khar, Mumbai</a></li>
+        <li><a href="#form">Ekaani South Ex 2, Delhi</a></li>
+        <li><a href="#form">Ekaani Kinerhs Collection, Pune</a></li>
+        <li><a href="#form">Ekaani MG Road, Gurgaon</a></li>
+        <li><a href="#form">Ekaani Jaipur</a></li>
+        <li><a href="#form">Ekaani Studio, Kolkata</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="currentYear"></span> Ekaani. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- THANK YOU OVERLAY -->
+<div class="thankyou-overlay" id="thankyouOverlay">
+  <div class="thankyou-card">
+    <button class="thankyou-close" id="thankyouClose" aria-label="Close">&times;</button>
+    <div class="thankyou-icon">
+      <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+    </div>
+    <h3>Thank You!</h3>
+    <p>Your enquiry has been received. Our team will get in touch with you shortly to help plan your wedding hampers.</p>
+    <div class="thankyou-actions">
+      <a href="https://wa.me/919910926757?text=Hi%20Ekaani%21%20I%27m%20interested%20in%20your%20wedding%20hampers%20%26%20return%20gifts.%20Could%20you%20please%20share%20more%20details%20and%20pricing%3F" target="_blank" rel="noopener" class="ty-btn whatsapp">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.6 1.1 2.8c.1.2 2 3 4.9 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a href="#top" class="ty-btn watch" id="watchMoreBtn">
+        <svg viewBox="0 0 24 24" fill="var(--dark)"><path d="M8 5v14l11-7z"/></svg>
+        Watch More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE STICKY CALL / QUOTE BAR -->
+<div class="mobile-sticky-bar">
+  <a href="tel:+919811099999" class="call-btn">
+    <svg viewBox="0 0 24 24"><path d="M21,8h-7V6h7V8z"/><path d="M12,7l4,4V3L12,7z"/><path d="M20.023,15.488c-0.63-0.015-1.423-0.052-1.924-0.14c-0.542-0.096-1.194-0.282-1.653-0.425c-0.36-0.112-0.752-0.013-1.019,0.253L13.21,17.38c-1.532-0.807-2.759-1.747-3.798-2.792c-1.045-1.039-1.985-2.266-2.792-3.798l2.204-2.218C9.09,8.305,9.189,7.913,9.077,7.553c-0.142-0.458-0.329-1.11-0.424-1.652C8.564,5.4,8.528,4.607,8.512,3.977C8.499,3.432,8.055,3,7.51,3H4C3.562,3,3,3.328,3,4c0,4.539,1.84,8.874,4.966,12.034C11.126,19.16,15.461,21,20,21c0.672,0,1-0.562,1-1v-3.51C21,15.945,20.568,15.501,20.023,15.488z"/></svg>
+    Call Now
+  </a>
+  <a href="#form" class="quote-btn">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+    Get Quote
+  </a>
+</div>
+
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    heroVideo.playbackRate = 1.5;
+    heroVideo.addEventListener('loadedmetadata', () => { heroVideo.playbackRate = 1.5; });
+  }
+
+  const thankyouOverlay = document.getElementById('thankyouOverlay');
+  function openThankYou(){
+    thankyouOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeThankYou(){
+    thankyouOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('thankyouClose').addEventListener('click', closeThankYou);
+  document.getElementById('watchMoreBtn').addEventListener('click', closeThankYou);
+  thankyouOverlay.addEventListener('click', function(e){
+    if (e.target === thankyouOverlay) closeThankYou();
+  });
+
+  document.querySelectorAll('form').forEach(f => {
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      const form = this;
+      const submitBtn = form.querySelector('.form-submit');
+      const originalText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+
+      const formData = new FormData(form);
+
+      fetch('https://formsubmit.co/ajax/testmailekaani@gmail.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Submission failed');
+        return res.json();
+      })
+      .then(() => {
+        form.reset();
+        openThankYou();
+      })
+      .catch(() => {
+        alert('Something went wrong sending your enquiry. Please call or WhatsApp us directly and our team will assist you right away.');
+      })
+      .finally(() => {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+      });
+    });
+  });
+
+  // One-image-at-a-time sliders
+  document.querySelectorAll('.slider').forEach(slider => {
+    const track = slider.querySelector('.slider-track');
+    const slides = slider.querySelectorAll('.slide');
+    const dotsWrap = slider.querySelector('.slider-dots');
+    let index = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function update(){
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dotsWrap.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+    function goTo(i){
+      index = (i + slides.length) % slides.length;
+      update();
+    }
+
+    slider.querySelector('.next').addEventListener('click', () => goTo(index + 1));
+    slider.querySelector('.prev').addEventListener('click', () => goTo(index - 1));
+
+    let auto = setInterval(() => goTo(index + 1), 4000);
+    slider.addEventListener('mouseenter', () => clearInterval(auto));
+    slider.addEventListener('mouseleave', () => { auto = setInterval(() => goTo(index + 1), 4000); });
+  });
+
+  // STORE LOCATION SLIDER (1 per view on mobile, 4 per view on desktop)
+  (function(){
+    const scroller = document.getElementById('locScroller');
+    const prevBtn = document.getElementById('locPrev');
+    const nextBtn = document.getElementById('locNext');
+    const counter = document.getElementById('locCounter');
+    if (!scroller || !prevBtn || !nextBtn || !counter) return;
+
+    const totalSlides = scroller.querySelectorAll('.loc-slide').length;
+    const desktopQuery = window.matchMedia('(min-width:768px)');
+
+    function perView(){
+      return desktopQuery.matches ? 4 : 1;
+    }
+    function totalPages(){
+      return Math.max(1, Math.ceil(totalSlides / perView()));
+    }
+    function currentPage(){
+      const pageWidth = scroller.clientWidth || 1;
+      return Math.min(totalPages(), Math.round(scroller.scrollLeft / pageWidth) + 1);
+    }
+    function updateCounter(){
+      counter.textContent = `${currentPage()} / ${totalPages()}`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      scroller.scrollBy({ left: scroller.clientWidth, behavior: 'smooth' });
+    });
+    prevBtn.addEventListener('click', () => {
+      scroller.scrollBy({ left: -scroller.clientWidth, behavior: 'smooth' });
+    });
+
+    let scrollTimer;
+    scroller.addEventListener('scroll', () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(updateCounter, 100);
+    });
+    window.addEventListener('resize', updateCounter);
+    if (desktopQuery.addEventListener) desktopQuery.addEventListener('change', updateCounter);
+
+    updateCounter();
+  })();
+</script>
+
+</body>
+</html>
