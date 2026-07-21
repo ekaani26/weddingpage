@@ -1832,6 +1832,9 @@ function gtag_report_conversion(url) {
         return res.json();
       })
       .then(() => {
+        gtag('event', 'conversion', {
+        'send_to': 'AW-706143010/UnLgCIvN_tMcEKLG29AC'
+    });
         form.reset();
         openThankYou();
       })
