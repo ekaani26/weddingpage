@@ -32,8 +32,11 @@ function gtag_report_conversion(url) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Wedding Return Gifts & Luxury Wedding Hampers in Delhi NCR | Ekaani</title>
 <meta name="description" content="Ekaani: Delhi wedding gifting specialists. Luxury silver wedding gifts, personalized hampers &amp; wedding return gifts in Delhi, Noida, Gurugram &amp; pan-India.">
-<meta name="keywords" content="wedding return gifts, wedding return gift ideas, wedding gifts in delhi, wedding return gifts in delhi, wedding hampers in noida, wedding gifts in gurugram, wedding return gifts in ghaziabad, wedding gift hampers in faridabad, delhi ncr wedding gifts, return gifts for wedding guests, luxury silver wedding gifts, personalized wedding hampers, engagement return gifts, ring platter for engagement, bridesmaid hamper, housewarming return gifts, silver gift set for wedding">
+<meta name="keywords" content="wedding return gifts, wedding return gift ideas, wedding gifts in delhi, wedding return gifts in delhi, wedding hampers in noida, wedding gifts in gurugram, wedding return gifts in ghaziabad, wedding gift hampers in faridabad, delhi ncr wedding gifts, return gifts for wedding guests, luxury silver wedding gifts, personalized wedding hampers, engagement return gifts, ring platter for engagement, bridesmaid hamper, housewarming return gifts, silver gift set for wedding, wedding return gifts in mumbai, luxury wedding hampers in mumbai, wedding hampers in pune, wedding return gifts in lucknow, wedding hampers in hyderabad, luxury wedding gifts in hyderabad">
+<script src="https://elfsightcdn.com/platform.js" async></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="preconnect" href="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -306,6 +309,44 @@ function gtag_report_conversion(url) {
   .about-img{flex:1;min-width:300px;}
   .about-img img{border-radius:2px;width:100%;height:420px;object-fit:cover;}
 
+  /* READ MORE TOGGLE */
+  .read-more-details{margin-top:6px;text-align:center;}
+  .read-more-details summary{
+    display:inline-flex;align-items:center;gap:6px;
+    cursor:pointer;list-style:none;
+    color:var(--accent);font-weight:700;font-size:13px;
+    letter-spacing:.5px;text-transform:uppercase;
+  }
+  .read-more-details summary::-webkit-details-marker{display:none;}
+  .read-more-details summary::after{content:"+";font-size:16px;transition:transform .25s ease;}
+  .read-more-details[open] summary::after{transform:rotate(45deg);}
+  .read-more-details[open] summary{margin-bottom:12px;}
+  .read-more-details .extra-copy{max-width:780px;margin:0 auto;text-align:center;}
+  .read-more-details .extra-copy p{font-size:16px;color:var(--muted);margin-bottom:12px;}
+
+  /* CITY SEO ACCORDION */
+  .city-seo-grid{
+    max-width:900px;margin:0 auto;
+    display:grid;grid-template-columns:1fr;gap:0;
+  }
+  .city-seo-item{
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    padding:22px 0;
+  }
+  .city-seo-item summary{
+    font-family:"Playfair Display",serif;
+    font-size:19px;font-weight:600;
+    cursor:pointer;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .city-seo-item summary::-webkit-details-marker{display:none;}
+  .city-seo-item summary::after{
+    content:"+";font-size:22px;color:var(--accent);
+    flex-shrink:0;transition:transform .25s ease;
+  }
+  .city-seo-item[open] summary::after{transform:rotate(45deg);}
+  .city-seo-item p{margin-top:14px;font-size:15px;color:var(--muted);line-height:1.7;}
+
   /* FAQ */
   .faq-list{max-width:820px;margin:0 auto;}
   .faq-item{
@@ -358,6 +399,23 @@ function gtag_report_conversion(url) {
     .store-gallery img{height:320px;}
     .store-gallery img:last-child{height:320px;}
   }
+
+  /* REELS - 1 per view on mobile, auto-slide */
+  .reels-wrap{overflow:hidden;}
+  .reels-track{
+    display:flex;
+    gap:16px;
+    transition:transform 0.6s ease;
+  }
+  .reel-slide{
+    flex:0 0 100%;
+    border-radius:16px;
+    overflow:hidden;
+    aspect-ratio:9/16;
+    background:#000;
+    box-shadow:0 18px 36px rgba(0,0,0,0.12);
+  }
+  .reel-slide video{width:100%;height:100%;object-fit:cover;display:block;}
 
   /* STORE LOCATIONS - scroll-snap slider, 1 per view */
   .loc-slider-wrap{position:relative;max-width:520px;margin:0 auto;}
@@ -854,6 +912,9 @@ function gtag_report_conversion(url) {
     .loc-scroller{gap:22px;}
     .loc-slide{flex:0 0 calc(25% - 16.5px);padding:0;}
     .loc-card{min-height:260px;}
+
+    /* DESKTOP: REELS 4 PER SLIDE */
+    .reel-slide{flex:0 0 calc(25% - 12px);}
   }
 </style>
 <script type="application/ld+json">
@@ -1035,7 +1096,7 @@ function gtag_report_conversion(url) {
 <header id="top">
   <div class="container header-inner">
     <div class="logo">
-      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/Layer_x0020_1_83f4e6f8-cf11-4a6c-9d21-9bb72e6775d8.svg?v=1683268225" alt="Ekaani">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/Layer_x0020_1_83f4e6f8-cf11-4a6c-9d21-9bb72e6775d8.svg?v=1683268225" alt="Ekaani" loading="eager" fetchpriority="high" decoding="async">
     </div>
     <div class="contact-links">
       <a href="tel:+919811123226">
@@ -1056,7 +1117,7 @@ function gtag_report_conversion(url) {
 
 <!-- HERO -->
 <section class="hero">
-  <video id="heroVideo" autoplay muted loop playsinline>
+  <video id="heroVideo" autoplay muted loop playsinline preload="auto" fetchpriority="high">
     <source src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/video/STORE%20VIDEO%20%28HORIZONTAL%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.mp4" type="video/mp4">
   </video>
   <div class="hero-content">
@@ -1073,7 +1134,166 @@ function gtag_report_conversion(url) {
     <div class="intro-copy">
       <div class="eyebrow-rule"></div>
       <h2 style="font-family:'Playfair Display',serif;font-weight:600;font-size:32px;margin-bottom:18px;">Luxury Wedding Hampers &amp; Wedding Return Gifts in Delhi NCR</h2>
-      <p>Ekaani is a Delhi wedding gifting specialist designing luxury silver wedding gifts, personalized wedding hampers, and return gifts for wedding guests — blending traditional craftsmanship with contemporary design for welcome kits, sangeet favors, and premium gifting collections. From our stores across Delhi, Defence Colony and Khan Market, we serve intimate ceremonies and destination weddings alike, with delivery across Delhi NCR — including Noida, Gurugram, Ghaziabad and Faridabad — and bulk orders of 500+ pan-India.</p>
+      <p>Ekaani is a Delhi wedding gifting specialist designing luxury silver wedding gifts, personalized wedding hampers, and return gifts for wedding guests.</p>
+
+      <details class="read-more-details">
+        <summary>Read More</summary>
+        <div class="extra-copy">
+          <p>Blending traditional craftsmanship with contemporary design for welcome kits, sangeet favors, and premium gifting collections, Ekaani serves clients from stores across Delhi, Defence Colony and Khan Market. We serve intimate ceremonies and destination weddings alike, with delivery across Delhi NCR — including Noida, Gurugram, Ghaziabad and Faridabad — and bulk orders of 500+ pan-India.</p>
+          <p>Every Ekaani wedding hamper is designed as a keepsake, not a throwaway favor — from engraved silver gift sets and ring platters for engagement ceremonies to bridesmaid hampers and housewarming return gifts for post-wedding celebrations. Our Delhi NCR clients can visit our Defence Colony, Khan Market and South Ex 2 stores for in-person consultations, fabric and finish samples, and same-week production on urgent orders.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- REELS -->
+<section class="section alt" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Wedding Gifts &amp; Invites Reels</h2>
+      <p>A quick look at our wedding hampers, return gifts and invites in motion</p>
+    </div>
+    <div class="reels-wrap">
+      <div class="reels-track" id="reelsTrack">
+        <div class="reel-slide"><video src="https://cdn.shopify.com/videos/c/o/v/82601e9feebd4c75a84505d25e70c612.mp4" muted autoplay loop playsinline preload="metadata"></video></div>
+        <div class="reel-slide"><video src="https://cdn.shopify.com/videos/c/o/v/cb0dad0e729647a1a53e46bb725084d0.mp4" muted autoplay loop playsinline preload="metadata"></video></div>
+        <div class="reel-slide"><video src="https://cdn.shopify.com/videos/c/o/v/df1a10790052492489392cc4228a8f40.mp4" muted autoplay loop playsinline preload="metadata"></video></div>
+        <div class="reel-slide"><video src="https://cdn.shopify.com/videos/c/o/v/9b7607f5680b48e3b12a3c71ebd8476c.mp4" muted autoplay loop playsinline preload="metadata"></video></div>
+        <div class="reel-slide"><video src="https://cdn.shopify.com/videos/c/o/v/407efcfa56c34d829d929a61b0e825bb.mp4" muted autoplay loop playsinline preload="metadata"></video></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVINE WEDDING GIFTS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Divine Wedding Gifts</h2>
+      <p>An exquisite porcelain collection blessed for new beginnings</p>
+    </div>
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-1.jpg" alt="Divine porcelain wedding return gift Delhi" loading="eager" fetchpriority="high" decoding="async"></div>
+        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Divine%202/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-2.jpg" alt="Personalized porcelain wedding hamper" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Divine%202/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-3.jpg" alt="Luxury wedding gift porcelain collection" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Divine%202/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-4.jpg" alt="Premium wedding return gift hamper" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-2.jpg" alt="Divine wedding gifting collection Delhi NCR" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-3.jpg" alt="Porcelain wedding hamper for guests" loading="lazy" decoding="async"></div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+      <div class="slider-dots"></div>
+    </div>
+    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Celebrate Your Wedding with Timeless Elegance</h2>
+      <p>An artistic blend of tradition and splendor, crafted for weddings across Delhi NCR</p>
+    </div>
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Personalized wedding hamper Delhi" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="Luxury wedding welcome kit hamper" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/17_910675b3-4f75-41d3-a9df-60a731c9963d.jpg?v=1783925440" alt="Wedding return gift hamper for guests" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459" alt="Premium wedding gift hamper Delhi NCR" loading="lazy" decoding="async"></div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+      <div class="slider-dots"></div>
+    </div>
+    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Unveil a Hamper Beyond Compare</h2>
+      <p>Provide elegant tokens of gratitude to your guests</p>
+    </div>
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/14-38.jpg?v=1784361188" alt="Luxury silver wedding gift hamper" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/17_910675b3-4f75-41d3-a9df-60a731c9963d.jpg?v=1783925440" alt="Wedding return gift hamper Delhi" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="Personalized wedding hamper for bulk orders" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Elegant wedding gifting hamper Delhi NCR" loading="lazy" decoding="async"></div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+      <div class="slider-dots"></div>
+    </div>
+    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Exquisite Hampers for Discerning Tastes</h2>
+      <p>Luxury silver wedding gifts and sophisticated gifting, available in Delhi and pan-India</p>
+    </div>
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459" alt="Luxury silver wedding gifts hamper Delhi" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/14-38.jpg?v=1784361188" alt="Sophisticated wedding return gift hamper" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Personalized wedding gift hamper" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="Premium wedding gifting collection hamper" loading="lazy" decoding="async"></div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+      <div class="slider-dots"></div>
+    </div>
+    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>Gift a Box of Luxury</h2>
+      <p>More than just a hamper, it's a spectacular experience</p>
+    </div>
+    <div class="slider">
+      <div class="slider-track">
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/17_910675b3-4f75-41d3-a9df-60a731c9963d.jpg?v=1783925440" alt="Premium gifting collection wedding hamper" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459" alt="Luxury wedding gift box Delhi NCR" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/14-38.jpg?v=1784361188" alt="Wedding return gift hamper for guests Delhi" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Personalized wedding hamper box" loading="lazy" decoding="async"></div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+      <div class="slider-dots"></div>
+    </div>
+    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container about">
+    <div class="about-text">
+      <div class="eyebrow-rule" style="margin-left:0"></div>
+      <h2>About Ekaani</h2>
+      <p>Ekaani is a name that represents trust, superior craftsmanship, extravagant designs, international aesthetics, unrivaled quality, and a unique style. Leave a lasting impression that reflects the grandeur of your wedding. As a Delhi wedding gifting specialist with stores across Delhi NCR — including South Ex 2, Defence Colony and Khan Market — and 15 stores pan-India, Ekaani offers exquisite personalized wedding hampers and return gift collections designed to create lasting memories.</p>
+    </div>
+    <div class="about-img">
+      <img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/9%20%284%29.jpg" alt="About Ekaani - Delhi wedding gifting specialists" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -1107,137 +1327,6 @@ function gtag_report_conversion(url) {
         <h3>Delhi Wedding Gifting Specialists</h3>
         <p>Local sourcing, faster turnarounds and in-person consultations across Delhi, Noida, Gurugram, Ghaziabad and Faridabad.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- DIVINE WEDDING GIFTS -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow-rule"></div>
-      <h2>Divine Wedding Gifts</h2>
-      <p>An exquisite porcelain collection blessed for new beginnings</p>
-    </div>
-    <div class="slider">
-      <div class="slider-track">
-        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-1.jpg" alt="Divine porcelain wedding return gift Delhi"></div>
-        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Divine%202/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-2.jpg" alt="Personalized porcelain wedding hamper"></div>
-        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Divine%202/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-3.jpg" alt="Luxury wedding gift porcelain collection"></div>
-        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Divine%202/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-4.jpg" alt="Premium wedding return gift hamper"></div>
-        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-2.jpg" alt="Divine wedding gifting collection Delhi NCR"></div>
-        <div class="slide"><img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/Ekaani%20Porcelain%20Divine%20Collection%2002-06-2026-images-3.jpg" alt="Porcelain wedding hamper for guests"></div>
-      </div>
-      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
-      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
-      <div class="slider-dots"></div>
-    </div>
-    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
-  </div>
-</section>
-
-<!-- SECTION 1 -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow-rule"></div>
-      <h2>Celebrate Your Wedding with Timeless Elegance</h2>
-      <p>An artistic blend of tradition and splendor, crafted for weddings across Delhi NCR</p>
-    </div>
-    <div class="slider">
-      <div class="slider-track">
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Personalized wedding hamper Delhi"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="Luxury wedding welcome kit hamper"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/17_910675b3-4f75-41d3-a9df-60a731c9963d.jpg?v=1783925440" alt="Wedding return gift hamper for guests"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459" alt="Premium wedding gift hamper Delhi NCR"></div>
-      </div>
-      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
-      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
-      <div class="slider-dots"></div>
-    </div>
-    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
-  </div>
-</section>
-
-<!-- SECTION 2 -->
-<section class="section alt">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow-rule"></div>
-      <h2>Unveil a Hamper Beyond Compare</h2>
-      <p>Provide elegant tokens of gratitude to your guests</p>
-    </div>
-    <div class="slider">
-      <div class="slider-track">
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/14-38.jpg?v=1784361188" alt="Luxury silver wedding gift hamper"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/17_910675b3-4f75-41d3-a9df-60a731c9963d.jpg?v=1783925440" alt="Wedding return gift hamper Delhi"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="Personalized wedding hamper for bulk orders"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Elegant wedding gifting hamper Delhi NCR"></div>
-      </div>
-      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
-      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
-      <div class="slider-dots"></div>
-    </div>
-    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
-  </div>
-</section>
-
-<!-- SECTION 3 -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow-rule"></div>
-      <h2>Exquisite Hampers for Discerning Tastes</h2>
-      <p>Luxury silver wedding gifts and sophisticated gifting, available in Delhi and pan-India</p>
-    </div>
-    <div class="slider">
-      <div class="slider-track">
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459" alt="Luxury silver wedding gifts hamper Delhi"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/14-38.jpg?v=1784361188" alt="Sophisticated wedding return gift hamper"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Personalized wedding gift hamper"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/8_4fb44446-727e-4047-936d-84142d2d4910.jpg?v=1783925440" alt="Premium wedding gifting collection hamper"></div>
-      </div>
-      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
-      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
-      <div class="slider-dots"></div>
-    </div>
-    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
-  </div>
-</section>
-
-<!-- SECTION 4 -->
-<section class="section alt">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow-rule"></div>
-      <h2>Gift a Box of Luxury</h2>
-      <p>More than just a hamper, it's a spectacular experience</p>
-    </div>
-    <div class="slider">
-      <div class="slider-track">
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/17_910675b3-4f75-41d3-a9df-60a731c9963d.jpg?v=1783925440" alt="Premium gifting collection wedding hamper"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/03_3098a52e-92a9-480b-ba01-5bf300b9d69d.jpg?v=1784360459" alt="Luxury wedding gift box Delhi NCR"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/14-38.jpg?v=1784361188" alt="Wedding return gift hamper for guests Delhi"></div>
-        <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/01_26.jpg?v=1783925416" alt="Personalized wedding hamper box"></div>
-      </div>
-      <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
-      <button class="slider-arrow next" aria-label="Next">&#10095;</button>
-      <div class="slider-dots"></div>
-    </div>
-    <div class="cta-center"><a href="#form" class="btn">Enquire Now</a></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section">
-  <div class="container about">
-    <div class="about-text">
-      <div class="eyebrow-rule" style="margin-left:0"></div>
-      <h2>About Ekaani</h2>
-      <p>Ekaani is a name that represents trust, superior craftsmanship, extravagant designs, international aesthetics, unrivaled quality, and a unique style. Leave a lasting impression that reflects the grandeur of your wedding. As a Delhi wedding gifting specialist with stores across Delhi NCR — including South Ex 2, Defence Colony and Khan Market — and 15 stores pan-India, Ekaani offers exquisite personalized wedding hampers and return gift collections designed to create lasting memories.</p>
-    </div>
-    <div class="about-img">
-      <img src="https://fb9w59ff2ggwsz4d.public.blob.vercel-storage.com/9%20%284%29.jpg" alt="About Ekaani - Delhi wedding gifting specialists">
     </div>
   </div>
 </section>
@@ -1325,13 +1414,13 @@ function gtag_report_conversion(url) {
     </div>
 
     <div class="store-gallery">
-      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/IMG_2610.jpg?v=1783590358" alt="Ekaani store interior">
-      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/DSC2720.jpg?v=1783590301" alt="Ekaani store display">
-      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/STS_393.jpg?v=1783590288" alt="Ekaani store front">
-      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/STS_496.jpg?v=1783590287" alt="Ekaani store collection">
-      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/9_4.jpg?v=1783494709" alt="Ekaani store showcase">
-      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/2_3_1.jpg?v=1783494708" alt="Ekaani store hampers on display">
-      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/5_4_1.jpg?v=1783494783" alt="Ekaani store interior detail">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/IMG_2610.jpg?v=1783590358" alt="Ekaani store interior" loading="lazy" decoding="async">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/DSC2720.jpg?v=1783590301" alt="Ekaani store display" loading="lazy" decoding="async">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/STS_393.jpg?v=1783590288" alt="Ekaani store front" loading="lazy" decoding="async">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/STS_496.jpg?v=1783590287" alt="Ekaani store collection" loading="lazy" decoding="async">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/9_4.jpg?v=1783494709" alt="Ekaani store showcase" loading="lazy" decoding="async">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/2_3_1.jpg?v=1783494708" alt="Ekaani store hampers on display" loading="lazy" decoding="async">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/5_4_1.jpg?v=1783494783" alt="Ekaani store interior detail" loading="lazy" decoding="async">
     </div>
 
     <div class="loc-slider-wrap">
@@ -1564,32 +1653,44 @@ function gtag_report_conversion(url) {
 
     <!-- Mobile: 2-column static grid -->
     <div class="clients-grid">
-      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani"></div>
-      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs"></div>
-      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement"></div>
-      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance"></div>
-      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADANI.png?v=1783321913" alt="Adani"></div>
-      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani" loading="lazy" decoding="async"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs" loading="lazy" decoding="async"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement" loading="lazy" decoding="async"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance" loading="lazy" decoding="async"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADANI.png?v=1783321913" alt="Adani" loading="lazy" decoding="async"></div>
+      <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak" loading="lazy" decoding="async"></div>
     </div>
 
     <!-- Desktop: sliding marquee (logos duplicated for seamless loop) -->
     <div class="clients-marquee">
       <div class="clients-track">
-        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani"></div>
-        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs"></div>
-        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement"></div>
-        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance"></div>
-        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADANI.png?v=1783321913" alt="Adani"></div>
-        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani" loading="lazy" decoding="async"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs" loading="lazy" decoding="async"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement" loading="lazy" decoding="async"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance" loading="lazy" decoding="async"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADANI.png?v=1783321913" alt="Adani" loading="lazy" decoding="async"></div>
+        <div class="clients-card"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak" loading="lazy" decoding="async"></div>
         <!-- duplicate set for seamless infinite scroll -->
-        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani"></div>
-        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs"></div>
-        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement"></div>
-        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance"></div>
-        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADANI.png?v=1783321913" alt="Adani"></div>
-        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani" loading="lazy" decoding="async"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs" loading="lazy" decoding="async"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement" loading="lazy" decoding="async"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance" loading="lazy" decoding="async"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADANI.png?v=1783321913" alt="Adani" loading="lazy" decoding="async"></div>
+        <div class="clients-card" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak" loading="lazy" decoding="async"></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- GOOGLE REVIEWS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-rule"></div>
+      <h2>What Our Clients Say</h2>
+      <p>Real reviews from couples and corporate clients who chose Ekaani</p>
+    </div>
+    <div class="elfsight-app-d9f5ee3c-ccd5-46d8-b6ca-7e45125e3cf3" data-elfsight-app-lazy></div>
   </div>
 </section>
 
@@ -1666,12 +1767,12 @@ function gtag_report_conversion(url) {
     <div class="footer-grid">
       <div class="footer-col">
         <div class="footer-logo">
-          <a href="https://www.ekaani.com/"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/Layer_x0020_1_83f4e6f8-cf11-4a6c-9d21-9bb72e6775d8.svg?v=1683268225" alt="Ekaani"></a>
+          <a href="https://www.ekaani.com/"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/Layer_x0020_1_83f4e6f8-cf11-4a6c-9d21-9bb72e6775d8.svg?v=1683268225" alt="Ekaani" loading="lazy" decoding="async"></a>
         </div>
         <p>Ekaani designs and curates luxury silver wedding gifts, personalized wedding hampers, welcome kits, and wedding return gifts for celebrations across Delhi NCR and India — trusted by families for premium craftsmanship and personalized wedding gifting.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.85.23 2.5.48.68.27 1.25.62 1.82 1.19.57.57.92 1.14 1.19 1.82.25.65.43 1.4.48 2.5.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.23 1.85-.48 2.5a4.9 4.9 0 01-1.19 1.82 4.9 4.9 0 01-1.82 1.19c-.65.25-1.4.43-2.5.48-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.85-.23-2.5-.48a4.9 4.9 0 01-1.82-1.19 4.9 4.9 0 01-1.19-1.82c-.25-.65-.43-1.4-.48-2.5C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.23-1.85.48-2.5.27-.68.62-1.25 1.19-1.82A4.9 4.9 0 015.55 2.6c.65-.25 1.4-.43 2.5-.48C9.15 2.06 9.4 2 12 2z"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
+          <a href="https://www.instagram.com/ekaani_spreadinghappiness" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.85.23 2.5.48.68.27 1.25.62 1.82 1.19.57.57.92 1.14 1.19 1.82.25.65.43 1.4.48 2.5.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.23 1.85-.48 2.5a4.9 4.9 0 01-1.19 1.82 4.9 4.9 0 01-1.82 1.19c-.65.25-1.4.43-2.5.48-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.85-.23-2.5-.48a4.9 4.9 0 01-1.82-1.19 4.9 4.9 0 01-1.19-1.82c-.25-.65-.43-1.4-.48-2.5C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.23-1.85.48-2.5.27-.68.62-1.25 1.19-1.82A4.9 4.9 0 015.55 2.6c.65-.25 1.4-.43 2.5-.48C9.15 2.06 9.4 2 12 2z"/></svg></a>
+          <a href="https://www.facebook.com/Ekaaniproducts" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
           <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.6 1.1 2.8c.1.2 2 3 4.9 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg></a>
         </div>
       </div>
@@ -1713,6 +1814,10 @@ function gtag_report_conversion(url) {
             <li><a href="https://www.ekaani.com/#bridesmaidhamper">Bridesmaid Hamper Gifts</a></li>
             <li><a href="https://www.ekaani.com/#silvergiftset">Silver Gift Set for Wedding</a></li>
             <li><a href="https://www.ekaani.com/#housewarming">Housewarming Return Gift Ideas</a></li>
+            <li><a href="https://www.ekaani.com/#mumbaiweddinggifts">Wedding Return Gifts in Mumbai</a></li>
+            <li><a href="https://www.ekaani.com/#puneweddinggifts">Wedding Hampers in Pune</a></li>
+            <li><a href="https://www.ekaani.com/#lucknowweddinggifts">Wedding Return Gifts in Lucknow</a></li>
+            <li><a href="https://www.ekaani.com/#hyderabadweddinggifts">Wedding Hampers in Hyderabad</a></li>
           </ul>
         </details>
       </div>
@@ -1728,6 +1833,8 @@ function gtag_report_conversion(url) {
     </div>
 
     <div class="footer-locations">
+      <h4>Wedding Hampers &amp; Return Gifts Across India</h4>
+      <p style="margin-bottom:20px;">For couples planning weddings outside Delhi NCR, Ekaani's wedding gifting expertise extends pan-India — with dedicated collections and delivery for Mumbai, Pune, Lucknow, Hyderabad and 15+ cities, so every guest receives the same premium personalized wedding hamper regardless of where the wedding is hosted.</p>
       <h4>Our Store Locations</h4>
       <ul>
         <li><a href="#form">Ekaani Ahmedabad</a></li>
@@ -1877,6 +1984,43 @@ function gtag_report_conversion(url) {
     slider.addEventListener('mouseenter', () => clearInterval(auto));
     slider.addEventListener('mouseleave', () => { auto = setInterval(() => goTo(index + 1), 4000); });
   });
+
+  // REELS SLIDER (1 per view on mobile, 4 per view on desktop, auto-slide)
+  (function(){
+    const track = document.getElementById('reelsTrack');
+    if (!track) return;
+    const wrap = track.parentElement;
+    const slides = track.querySelectorAll('.reel-slide');
+    const desktopQuery = window.matchMedia('(min-width:768px)');
+    let index = 0;
+
+    function perView(){
+      return desktopQuery.matches ? 4 : 1;
+    }
+    function maxIndex(){
+      return Math.max(slides.length - perView(), 0);
+    }
+    function slideStep(){
+      if (!slides.length) return 0;
+      const style = getComputedStyle(track);
+      const gap = parseFloat(style.gap) || 0;
+      return slides[0].getBoundingClientRect().width + gap;
+    }
+    function update(){
+      track.style.transform = `translateX(-${index * slideStep()}px)`;
+    }
+    function goTo(i){
+      const max = maxIndex();
+      index = i > max ? 0 : (i < 0 ? max : i);
+      update();
+    }
+
+    let auto = setInterval(() => goTo(index + 1), 3500);
+    wrap.addEventListener('mouseenter', () => clearInterval(auto));
+    wrap.addEventListener('mouseleave', () => { auto = setInterval(() => goTo(index + 1), 3500); });
+    window.addEventListener('resize', () => goTo(0));
+    goTo(0);
+  })();
 
   // STORE LOCATION SLIDER (1 per view on mobile, 4 per view on desktop)
   (function(){
