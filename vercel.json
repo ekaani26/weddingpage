@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/wedding-gifts-2",
+      "destination": "https://wedding-gifts-2.vercel.app"
+    },
+    {
+      "source": "/wedding-gifts-2/:path*",
+      "destination": "https://wedding-gifts-2.vercel.app/:path*"
+    }
+  ]
+}
