@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekaani — Corporate Gifts Catalogue 2026</title>
+<meta name="description" content="Ekaani Corporate Gifts Catalogue — divine collections, luxury hampers, silverware, fine tableware and wedding invitation suites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark: #000000;
+  --bg-dark2: #0a0a0a;
+  --bg-cream: #ffffff;
+  --bg-cream2: #f5f5f5;
+  --gold: #ffffff;
+  --gold-bright: #ffffff;
+  --gold-deep: #000000;
+  --ink: #000000;
+  --ink-soft: #3a3a3a;
+  --maroon: #000000;
+  --line: rgba(0,0,0,0.15);
+  --shadow: 0 30px 60px -20px rgba(0,0,0,0.35);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg-cream);
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .display {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.eyebrow {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+/* progress bar */
+#progress {
+  position: fixed; top:0; left:0; height:3px; width:0%;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-bright));
+  z-index: 999; transition: width 0.1s linear;
+}
+
+/* NAV */
+header#topnav {
+  position: sticky; top:0; z-index: 500;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.nav-inner {
+  max-width: 1400px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  gap: 1rem;
+}
+.logo {
+  display: flex; align-items: center; gap: 0.6rem;
+  white-space: nowrap;
+}
+.logo-mark { height: 34px; width: auto; display: block; filter: invert(1) brightness(2); }
+
+.pillbar {
+  display: flex; gap: 0.4rem; overflow-x: auto; scrollbar-width: none;
+  -ms-overflow-style: none; flex: 1; justify-content: center;
+}
+.pillbar::-webkit-scrollbar { display:none; }
+.pill {
+  flex-shrink:0;
+  background: transparent; color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px; padding: 0.42rem 0.95rem;
+  font-family:'Jost',sans-serif; font-size: 0.72rem; letter-spacing:0.06em;
+  cursor: pointer; transition: all 0.25s ease; white-space: nowrap;
+}
+.pill:hover, .pill.active {
+  background: var(--gold); color: #000000; border-color: var(--gold);
+}
+.nav-cta {
+  flex-shrink:0;
+  background: var(--gold);
+  color: #000000;
+  border: none; padding: 0.55rem 1.1rem;
+  border-radius: 999px; font-family:'Jost',sans-serif;
+  font-size: 0.75rem; font-weight:500; letter-spacing:0.05em;
+  cursor:pointer; text-decoration:none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.nav-cta:hover { background: var(--gold-bright); transform: translateY(-1px); }
+.hamburger { display:none; }
+.mobile-drawer { display:none; }
+
+/* HERO */
+.hero {
+  width: 100%;
+  line-height: 0;
+}
+.hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* CATEGORY GROUPS */
+.catgroup { padding: 5.5rem 1.5rem 2rem; max-width: 1400px; margin: 0 auto; }
+.catgroup-head { text-align:center; max-width: 62ch; margin: 0 auto; }
+.catgroup-head h2, .catgroup-head .eyebrow { text-align:center; }
+.catgroup-tag {
+  font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.3rem;
+  color: var(--ink-soft); margin-top:0.4rem;
+}
+.feather-rule {
+  color: var(--gold-deep); width: 140px; margin: 2.2rem auto 3rem; opacity:0.75;
+}
+.feather-svg { width:100%; height:auto; }
+
+.spreads { display:flex; flex-direction: column; gap: 4.5rem; }
+.spread {
+  display:grid; grid-template-columns: 1fr; gap: 1.5rem;
+  opacity:0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.spread.in-view { opacity:1; transform: translateY(0); }
+.spread-media {
+  /* full-bleed: break out of any parent container to span the full viewport width, regardless of nesting */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+.spread-media img { width:100%; height:auto; display:block; transition: transform 0.6s ease; }
+.spread-media:hover img { transform: scale(1.02); }
+.spread-copy {
+  display:flex; flex-direction:column; align-items:flex-start; gap:0.7rem;
+  padding: 0 0.3rem;
+}
+.spread-copy h3 { font-size: 1.7rem; color: var(--ink); }
+.spread-copy p { font-size:0.95rem; color: var(--ink-soft); line-height:1.6; max-width:70ch; }
+.enquire-mini {
+  margin-top:0.3rem; background:transparent; border:none; color: var(--gold-deep);
+  font-family:'Jost',sans-serif; font-size:0.8rem; letter-spacing:0.04em;
+  cursor:pointer; padding:0; border-bottom: 1px solid var(--gold-deep);
+  padding-bottom: 2px;
+}
+.enquire-mini:hover { color: var(--ink); border-color: var(--ink); }
+
+/* alternate dark bands for divine + wedding + trust groups */
+#divine, #wedding, #trust {
+  background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark2));
+  color: #ffffff; border-radius: 0;
+  max-width: none; padding-left:0; padding-right:0;
+}
+#divine .catgroup-head, #wedding .catgroup-head, #trust .catgroup-head { padding: 0 1.5rem; }
+#divine .spreads, #wedding .spreads, #trust .spreads { max-width:1400px; margin:0 auto; padding: 0 1.5rem; }
+#divine .catgroup-tag, #wedding .catgroup-tag, #trust .catgroup-tag { color:#cccccc; }
+#divine .eyebrow, #wedding .eyebrow, #trust .eyebrow { color:#ffffff; }
+#divine .spread-copy h3, #wedding .spread-copy h3 { color:#ffffff; }
+#divine .spread-copy p, #wedding .spread-copy p { color:#cccccc; }
+#divine .enquire-mini, #wedding .enquire-mini { color:#ffffff; border-color:#ffffff; }
+#divine .enquire-mini:hover, #wedding .enquire-mini:hover { color:#cccccc; border-color:#cccccc; }
+#divine .feather-rule, #wedding .feather-rule, #trust .feather-rule { color: var(--gold-bright); }
+
+.trust-media { max-width:1400px; margin: 0 auto; padding: 0 1.5rem 2rem; }
+.trust-media img { border-radius:4px; box-shadow: var(--shadow); border:1px solid rgba(0,0,0,0.2); }
+
+/* FORM */
+#enquiry {
+  background: var(--bg-cream2);
+  padding: 6rem 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.form-wrap {
+  max-width: 780px; margin: 0 auto; text-align:center;
+}
+.form-wrap h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
+.form-wrap > p { color: var(--ink-soft); margin-top:0.8rem; max-width:56ch; margin-left:auto; margin-right:auto; }
+form#lead-form {
+  margin-top: 2.6rem; text-align:left;
+  display:grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.2rem;
+  background:#ffffff; padding: 2.2rem; border-radius: 4px;
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.field { display:flex; flex-direction:column; gap:0.4rem; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size:0.75rem; letter-spacing:0.05em; color: var(--ink-soft); text-transform:uppercase; }
+.field input, .field select, .field textarea {
+  font-family:'Jost',sans-serif; font-size:0.95rem; padding:0.75rem 0.9rem;
+  border: 1px solid #cccccc; border-radius:2px; background:#fff; color:var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: 2px solid var(--gold); outline-offset:1px; border-color: var(--gold);
+}
+.field textarea { resize: vertical; min-height: 90px; }
+.form-submit {
+  grid-column: 1 / -1; justify-self:start;
+  background: var(--gold-deep); color:#ffffff; border:none;
+  padding: 0.95rem 2.2rem; border-radius:2px; font-family:'Jost',sans-serif;
+  font-size:0.9rem; letter-spacing:0.05em; cursor:pointer; margin-top:0.4rem;
+  transition: background 0.2s ease;
+}
+.form-submit:hover { background:#000000; }
+.form-note { grid-column:1/-1; font-size:0.78rem; color: var(--ink-soft); margin-top:-0.3rem; }
+
+/* FOOTER */
+footer {
+  background: var(--bg-dark); color:#cccccc; padding: 3.5rem 1.5rem 2.2rem;
+  text-align:center;
+}
+footer .logo { justify-content:center; margin-bottom:1.2rem; }
+footer .flinks { display:flex; gap:1.6rem; justify-content:center; flex-wrap:wrap; font-size:0.85rem; margin-bottom:1.6rem; }
+footer .flinks a { text-decoration:none; color:#ffffff; }
+footer .flinks a:hover { color: var(--gold-bright); }
+footer .copy { font-size:0.72rem; letter-spacing:0.04em; color:#999999; }
+
+/* floating whatsapp */
+#wa-float {
+  position: fixed; bottom: 1.6rem; right: 1.6rem; z-index: 400;
+  width: 58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35); text-decoration:none;
+  transition: transform 0.2s ease;
+}
+#wa-float:hover { transform: scale(1.08); }
+#wa-float svg { width:30px; height:30px; fill:#fff; }
+
+/* WhatsApp quick-enquiry modal */
+#wa-modal-overlay {
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(0,0,0,0.6);
+  display: none; align-items: center; justify-content: center;
+  padding: 1.2rem;
+}
+#wa-modal-overlay.open { display: flex; }
+#wa-modal {
+  background: #ffffff; color: #000000;
+  width: 100%; max-width: 460px;
+  border-radius: 6px;
+  padding: 1.8rem;
+  position: relative;
+  max-height: 90vh; overflow-y: auto;
+  box-shadow: var(--shadow);
+}
+#wa-modal h3 {
+  font-size: 1.5rem; margin-bottom: 0.3rem;
+}
+#wa-modal p.wa-modal-sub {
+  font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1.2rem;
+}
+#wa-modal-close {
+  position: absolute; top: 0.9rem; right: 0.9rem;
+  background: none; border: none; font-size: 1.5rem; line-height: 1;
+  cursor: pointer; color: var(--ink-soft);
+}
+#wa-modal-close:hover { color: var(--ink); }
+#wa-modal-form { display: flex; flex-direction: column; gap: 1rem; }
+#wa-modal-form .field label {
+  font-size:0.75rem; letter-spacing:0.05em; color: var(--ink-soft); text-transform:uppercase;
+  display:block; margin-bottom: 0.35rem;
+}
+#wa-modal-form .field input, #wa-modal-form .field select {
+  width: 100%;
+  font-family:'Jost',sans-serif; font-size:0.95rem; padding:0.75rem 0.9rem;
+  border: 1px solid #cccccc; border-radius:2px; background:#fff; color:#000;
+}
+#wa-modal-form .field input:focus, #wa-modal-form .field select:focus {
+  outline: 2px solid #000; outline-offset:1px; border-color:#000;
+}
+#wa-modal-submit {
+  background: #000000; color:#ffffff; border:none;
+  padding: 0.95rem 1.4rem; border-radius:2px; font-family:'Jost',sans-serif;
+  font-size:0.9rem; letter-spacing:0.05em; cursor:pointer; margin-top:0.2rem;
+  transition: background 0.2s ease;
+}
+#wa-modal-submit:hover { background:#25D366; }
+
+@media (max-width: 1180px) {
+  .pillbar { display:none; }
+  .hamburger {
+    display:flex; background:transparent; border:1px solid rgba(255,255,255,0.35);
+    color: var(--gold-bright); border-radius:6px; padding:0.5rem 0.7rem; cursor:pointer;
+  }
+  .mobile-drawer {
+    position: fixed; inset:0 0 0 auto; width: min(84vw, 320px); height:100vh;
+    background: var(--bg-dark); z-index: 600; padding: 1.5rem;
+    transform: translateX(100%); transition: transform 0.3s ease;
+    display:flex; flex-direction:column; gap:0.6rem; overflow-y:auto;
+  }
+  .mobile-drawer.open { transform: translateX(0); }
+  .mobile-drawer .pill { width:100%; text-align:left; }
+  .drawer-close { align-self:flex-end; background:none; border:none; color:var(--gold-bright); font-size:1.6rem; cursor:pointer; margin-bottom:0.6rem; }
+}
+@media (max-width: 900px) {
+  form#lead-form { grid-template-columns: 1fr; }
+
+  /* Full-bleed spread images: keep them uncropped, natural aspect ratio, edge-to-edge on mobile */
+  .spread-media {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+  .spread-media img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .trust-media { padding: 0 1rem 1.5rem; }
+  .trust-media img { width:100%; height:auto; }
+
+  .catgroup { padding: 2rem 1rem 0.8rem; }
+  .spreads { gap: 1.6rem; }
+  .spread { gap: 0.6rem; }
+  .spread-copy { padding: 0 1rem; gap: 0.4rem; }
+  .spread-copy h3 { font-size: 1.25rem; }
+  .spread-copy p { font-size: 0.88rem; }
+  #divine .spreads, #wedding .spreads, #trust .spreads { padding: 0 1rem; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  .spread { transition:none; opacity:1; transform:none; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header id="topnav">
+  <div class="nav-inner">
+    <div class="logo">
+      <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/Layer_x0020_1_83f4e6f8-cf11-4a6c-9d21-9bb72e6775d8.svg?v=1683268225" alt="Ekaani" class="logo-mark">
+    </div>
+    <nav class="pillbar" id="pillbar">
+      <button class="pill" data-target="divine">Divine Collection</button>
+<button class="pill" data-target="hampers">Gifting Hampers</button>
+<button class="pill" data-target="corporate">Corporate Gifting</button>
+<button class="pill" data-target="silverware">Silverware & Serveware</button>
+<button class="pill" data-target="decor">Home Décor</button>
+<button class="pill" data-target="tableware">Fine Tableware</button>
+<button class="pill" data-target="wedding">Wedding Invites & Boxes</button>
+<button class="pill" data-target="trust">Trusted By</button>
+    </nav>
+    <a href="#enquiry" class="nav-cta">Get a Quote</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="drawer">
+  <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+  <button class="pill" data-target="divine">Divine Collection</button>
+<button class="pill" data-target="hampers">Gifting Hampers</button>
+<button class="pill" data-target="corporate">Corporate Gifting</button>
+<button class="pill" data-target="silverware">Silverware & Serveware</button>
+<button class="pill" data-target="decor">Home Décor</button>
+<button class="pill" data-target="tableware">Fine Tableware</button>
+<button class="pill" data-target="wedding">Wedding Invites & Boxes</button>
+<button class="pill" data-target="trust">Trusted By</button>
+</div>
+
+<section class="hero">
+  <img src="img/spread-01.jpg" alt="Ekaani corporate gifting" class="hero-img">
+</section>
+
+
+<section class="catgroup" id="divine">
+  <div class="catgroup-head">
+    <span class="eyebrow">Divine Collection</span>
+    <p class="catgroup-tag">Silver &amp; porcelain pooja essentials, handcrafted in Italy</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-02.jpg" alt="Pooja Thali Sets &amp; Porcelain Divine" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Pooja Thali Sets &amp; Porcelain Divine</h3>
+        <p>Silver-plated thalis for sacred rituals, alongside our Italian porcelain idols adorned with Swarovski crystal and 24-carat liquid gold.</p>
+        <button class="enquire-mini" data-item="Pooja Thali Sets &amp; Porcelain Divine">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-03.jpg" alt="Silver Divine Collection" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Silver Divine Collection</h3>
+        <p>Zavi god statues in 92.5 sterling silver, hallmarked and hand-finished by Italian craftsmen — limited to 1000 pieces.</p>
+        <button class="enquire-mini" data-item="Silver Divine Collection">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="hampers">
+  <div class="catgroup-head">
+    <span class="eyebrow">Gifting Hampers</span>
+    <p class="catgroup-tag">Curated baskets and boxes for every celebration</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-04.jpg" alt="Festive Hamper Boxes" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Festive Hamper Boxes</h3>
+        <p>Krishna, Durga Ji, Laxmi-Ganesh and Ram Ji hamper collections, each blending devotion with luxury gifting.</p>
+        <button class="enquire-mini" data-item="Festive Hamper Boxes">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="corporate">
+  <div class="catgroup-head">
+    <span class="eyebrow">Corporate Gifting</span>
+    <p class="catgroup-tag">Premium bulk gifting for clients, teams &amp; partners</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-05.jpg" alt="Premium Corporate Gifting" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Premium Corporate Gifting</h3>
+        <p>Fully customisable hampers, plus Home &amp; Utility, Mugs &amp; Jar and Evil Eye gift sets for everyday elegance.</p>
+        <button class="enquire-mini" data-item="Premium Corporate Gifting">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-06.jpg" alt="Luxury Gifting Suites" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Luxury Gifting Suites</h3>
+        <p>Bespoke velvet boxes finished with corporate branding, paired with silver gifts in artisanal packaging.</p>
+        <button class="enquire-mini" data-item="Luxury Gifting Suites">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-07.jpg" alt="Silver Gifts, Beautifully Packaged" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Silver Gifts, Beautifully Packaged</h3>
+        <p>Nature, Teal and Peacock Garden designer boxes — where the packaging is as memorable as the gift.</p>
+        <button class="enquire-mini" data-item="Silver Gifts, Beautifully Packaged">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-08.jpg" alt="Boxes with Edibles" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Boxes with Edibles</h3>
+        <p>Dry fruits, baklava and festive treats presented in designer corporate boxes and hampers.</p>
+        <button class="enquire-mini" data-item="Boxes with Edibles">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="hampers">
+  <div class="catgroup-head">
+    <span class="eyebrow">Gifting Hampers</span>
+    <p class="catgroup-tag">Curated baskets and boxes for every celebration</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-09.jpg" alt="Beauty, Wellness, Tea &amp; Coffee" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Beauty, Wellness, Tea &amp; Coffee</h3>
+        <p>Spa baskets, aroma hampers and artisanal tea sets curated for warm, thoughtful gifting.</p>
+        <button class="enquire-mini" data-item="Beauty, Wellness, Tea &amp; Coffee">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="silverware">
+  <div class="catgroup-head">
+    <span class="eyebrow">Silverware &amp; Serveware</span>
+    <p class="catgroup-tag">Hallmarked silver-plated trays, bowls &amp; serving sets</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-10.jpg" alt="Hampers, Trays &amp; Tableware Gifts" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Hampers, Trays &amp; Tableware Gifts</h3>
+        <p>Tray &amp; platter hampers, tea basket hampers and ceramic bowl sets for everyday luxury.</p>
+        <button class="enquire-mini" data-item="Hampers, Trays &amp; Tableware Gifts">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-11.jpg" alt="Sugar Pots &amp; Champagne Glasses" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Sugar Pots &amp; Champagne Glasses</h3>
+        <p>Silver-plated sugar pots, flower trays and champagne flutes for celebratory tables.</p>
+        <button class="enquire-mini" data-item="Sugar Pots &amp; Champagne Glasses">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-12.jpg" alt="Swan, Horse &amp; Kawa Sets" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Swan, Horse &amp; Kawa Sets</h3>
+        <p>Ornate spoon holders, covered serving trays and traditional Kawa sets in fine silver plate.</p>
+        <button class="enquire-mini" data-item="Swan, Horse &amp; Kawa Sets">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-13.jpg" alt="Nutbowls" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Nutbowls</h3>
+        <p>Peacock and elephant-motif sugar pots and mukhwas bowls, enamelled by hand.</p>
+        <button class="enquire-mini" data-item="Nutbowls">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="decor">
+  <div class="catgroup-head">
+    <span class="eyebrow">Home Décor</span>
+    <p class="catgroup-tag">Frames, centerpieces, Murano glass &amp; figurines</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-14.jpg" alt="Photo Frames" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Photo Frames</h3>
+        <p>Keepsake frames in silver, crystal and shine finishes — for memories that deserve to last.</p>
+        <button class="enquire-mini" data-item="Photo Frames">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="silverware">
+  <div class="catgroup-head">
+    <span class="eyebrow">Silverware &amp; Serveware</span>
+    <p class="catgroup-tag">Hallmarked silver-plated trays, bowls &amp; serving sets</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-15.jpg" alt="Decorative Trays" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Decorative Trays</h3>
+        <p>Peacock-foot and Roman round trays in silver plate, perfect for dining, worship or display.</p>
+        <button class="enquire-mini" data-item="Decorative Trays">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-16.jpg" alt="Baskets Collection" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Baskets Collection</h3>
+        <p>Handled glass and silver-plated baskets, blending utility with festive presentation.</p>
+        <button class="enquire-mini" data-item="Baskets Collection">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-17.jpg" alt="More from the Baskets Collection" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>More from the Baskets Collection</h3>
+        <p>Bamboo-pattern baskets, flower glass baskets and the Regal Peacock handbag basket.</p>
+        <button class="enquire-mini" data-item="More from the Baskets Collection">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-18.jpg" alt="Dry Fruit Boxes" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Dry Fruit Boxes</h3>
+        <p>The Silver Garden round box, horse-carriage server and lidded dry fruit boxes.</p>
+        <button class="enquire-mini" data-item="Dry Fruit Boxes">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="decor">
+  <div class="catgroup-head">
+    <span class="eyebrow">Home Décor</span>
+    <p class="catgroup-tag">Frames, centerpieces, Murano glass &amp; figurines</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-19.jpg" alt="Bowls &amp; Centerpieces" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Bowls &amp; Centerpieces</h3>
+        <p>Peacock serving bowls, elephant-motif bowls and dry-fruit carriages for the table.</p>
+        <button class="enquire-mini" data-item="Bowls &amp; Centerpieces">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-20.jpg" alt="Luxury Centerpieces" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Luxury Centerpieces</h3>
+        <p>Statement silver florals and candle stands that anchor a modern or traditional table.</p>
+        <button class="enquire-mini" data-item="Luxury Centerpieces">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-21.jpg" alt="Candle Stands &amp; Murano Glass" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Candle Stands &amp; Murano Glass</h3>
+        <p>Cream-enamel candelabras, crystal centrepieces and a Murano glass gift set, made in Italy.</p>
+        <button class="enquire-mini" data-item="Candle Stands &amp; Murano Glass">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-22.jpg" alt="Murano Vases &amp; Centerpieces" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Murano Vases &amp; Centerpieces</h3>
+        <p>Hand-blown Murano glass vases and centrepieces, bringing artistic charm to any space.</p>
+        <button class="enquire-mini" data-item="Murano Vases &amp; Centerpieces">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="tableware">
+  <div class="catgroup-head">
+    <span class="eyebrow">Fine Tableware</span>
+    <p class="catgroup-tag">Noritake, Ichkan Dankotuwa &amp; premium glassware</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-23.jpg" alt="Noritake Fine China" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Noritake Fine China</h3>
+        <p>Porcelain and bone china dinnerware — the Tusker Garden and Lotus Fountain designs.</p>
+        <button class="enquire-mini" data-item="Noritake Fine China">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-24.jpg" alt="Noritake Mug &amp; Carnival Collections" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Noritake Mug &amp; Carnival Collections</h3>
+        <p>The Majestic mug collection and striped Carnival teaware, boxed in floral packaging.</p>
+        <button class="enquire-mini" data-item="Noritake Mug &amp; Carnival Collections">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-25.jpg" alt="Eternal &amp; Basant Collections" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Eternal &amp; Basant Collections</h3>
+        <p>Ichkan Dankotuwa dinnerware, curved platters and the 20-piece Basant dinner set.</p>
+        <button class="enquire-mini" data-item="Eternal &amp; Basant Collections">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-26.jpg" alt="Secret Garden &amp; Qalla" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Secret Garden &amp; Qalla</h3>
+        <p>Floral 20-piece dinner sets and geometric gold-accented tea cup &amp; saucer sets.</p>
+        <button class="enquire-mini" data-item="Secret Garden &amp; Qalla">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-27.jpg" alt="Premium Glassware" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Premium Glassware</h3>
+        <p>Chinelli crystal tumblers and Nachtmann whisky sets, in smoke, amber, rose and mint.</p>
+        <button class="enquire-mini" data-item="Premium Glassware">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="decor">
+  <div class="catgroup-head">
+    <span class="eyebrow">Home Décor</span>
+    <p class="catgroup-tag">Frames, centerpieces, Murano glass &amp; figurines</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-28.jpg" alt="Animals &amp; Figurines" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Animals &amp; Figurines</h3>
+        <p>Abstract elephants, golden and black lions, owls, and Brazilian amethyst birds.</p>
+        <button class="enquire-mini" data-item="Animals &amp; Figurines">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-29.jpg" alt="Aurelia Vases" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Aurelia Vases</h3>
+        <p>Hand-blown ombré glass vases and gilded footed bowls from the Ekaani Home line.</p>
+        <button class="enquire-mini" data-item="Aurelia Vases">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+<section class="catgroup" id="wedding">
+  <div class="catgroup-head">
+    <span class="eyebrow">Wedding Invites &amp; Boxes</span>
+    <p class="catgroup-tag">Hand-illustrated invitation suites &amp; trousseau boxes</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="spreads">
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-30.jpg" alt="Wedding Invitation Suites" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Wedding Invitation Suites</h3>
+        <p>Hand-illustrated Pomegranate and Tree of Life elephant designs for the modern Indian wedding.</p>
+        <button class="enquire-mini" data-item="Wedding Invitation Suites">Enquire about this &rarr;</button>
+      </div>
+    </article>
+
+    <article class="spread reveal">
+      <div class="spread-media">
+        <img src="img/spread-31.jpg" alt="Designer Invitation Boxes" loading="lazy" width="1800" height="1000">
+      </div>
+      <div class="spread-copy">
+        <h3>Designer Invitation Boxes</h3>
+        <p>Modern Pichwai art and the Royal Jaipur designer card, for invitations that are kept, not discarded.</p>
+        <button class="enquire-mini" data-item="Designer Invitation Boxes">Enquire about this &rarr;</button>
+      </div>
+    </article>
+</div></section>
+
+
+<section class="catgroup trust-section" id="trust">
+  <div class="catgroup-head">
+    <span class="eyebrow">Trusted By</span>
+    <p class="catgroup-tag">Godrej, Emaar, Adani, Reliance, Ashok Leyland, Aditya Birla Group and more — gifted to leading dignitaries including the Hon'ble Prime Minister of India.</p>
+  </div>
+  <div class="feather-rule" aria-hidden="true"><svg viewBox="0 0 120 24" class="feather-svg"><path d="M2 12 C 20 2, 40 2, 58 12 C 40 22, 20 22, 2 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="30" cy="12" r="3" fill="currentColor"/><path d="M62 12 H118" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="12" r="2" fill="currentColor"/></svg></div>
+  <div class="trust-media">
+    <img src="img/spread-32.jpg" alt="Trusted by leading brands and dignitaries" loading="lazy" width="1800" height="1000">
+  </div>
+</section>
+
+<section id="enquiry">
+  <div class="form-wrap">
+    <span class="eyebrow" style="text-align:center;">Get In Touch</span>
+    <h2 class="display">Tell us what you're celebrating</h2>
+    <p>Share a few details and we'll send curated options with pricing on WhatsApp — usually within a few hours.</p>
+    <form id="lead-form">
+      <div class="field">
+        <label for="fname">Full name*</label>
+        <input type="text" id="fname" name="fname" required placeholder="Your name">
+      </div>
+      <div class="field">
+        <label for="fcompany">Company / occasion</label>
+        <input type="text" id="fcompany" name="fcompany" placeholder="Company name or occasion">
+      </div>
+      <div class="field">
+        <label for="fphone">WhatsApp number*</label>
+        <input type="tel" id="fphone" name="fphone" required placeholder="+91 98xxxxxxx">
+      </div>
+      <div class="field">
+        <label for="fcategory">Gifting category</label>
+        <select id="fcategory" name="fcategory">
+          <option value="Corporate Gifting">Corporate Gifting</option>
+          <option value="Wedding Gifting">Wedding Gifting</option>
+          <option value="Divine / Pooja Gifting">Divine / Pooja Gifting</option>
+          <option value="Home Decor">Home Décor</option>
+          <option value="Franchise Enquiry">Franchise Enquiry</option>
+          <option value="Bulk Order">Bulk Order</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fqty">Approx. quantity</label>
+        <input type="text" id="fqty" name="fqty" placeholder="e.g. 50 pieces">
+      </div>
+      <div class="field">
+        <label for="fbudget">Budget (per piece / total)</label>
+        <select id="fbudget" name="fbudget">
+          <option value="₹1,000 – ₹2,500">₹1,000 – ₹2,500</option>
+          <option value="₹2,500 – ₹5,000">₹2,500 – ₹5,000</option>
+          <option value="₹5,000 – ₹10,000">₹5,000 – ₹10,000</option>
+          <option value="₹10,000 – ₹25,000">₹10,000 – ₹25,000</option>
+          <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option>
+          <option value="₹50,000+">₹50,000+</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="fmsg">Message</label>
+        <textarea id="fmsg" name="fmsg" placeholder="Tell us more about what you're looking for..."></textarea>
+      </div>
+      <p class="form-note">On submit, we'll open WhatsApp with your details pre-filled so our team can respond directly.</p>
+      <button type="submit" class="form-submit">Send via WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="logo" style="justify-content:center;">
+    <img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/Layer_x0020_1_83f4e6f8-cf11-4a6c-9d21-9bb72e6775d8.svg?v=1683268225" alt="Ekaani" class="logo-mark" style="height:30px;">
+  </div>
+  <div class="flinks">
+    <a href="https://www.ekaani.com" target="_blank" rel="noopener">ekaani.com</a>
+    <a href="https://instagram.com/ekaani_spreadinghappiness" target="_blank" rel="noopener">@ekaani_spreadinghappiness</a>
+    <a href="https://facebook.com/ekaanihome" target="_blank" rel="noopener">facebook/ekaanihome</a>
+  </div>
+  <p class="copy">© 2026 Ekaani — Home · Divine · Gifting · Wedding. All rights reserved.</p>
+</footer>
+
+<a id="wa-float" href="#" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.61 1.902 6.484L4 29l7.72-1.867A11.94 11.94 0 0016.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.6c-1.87 0-3.62-.5-5.13-1.37l-.368-.216-4.58 1.107 1.128-4.463-.24-.383A9.55 9.55 0 016.4 15c0-5.302 4.298-9.6 9.6-9.6S25.6 9.698 25.6 15s-4.298 9.6-9.6 9.6zm5.24-7.19c-.287-.144-1.698-.838-1.962-.933-.264-.096-.456-.144-.648.144-.192.288-.744.933-.912 1.125-.168.192-.336.216-.623.072-.288-.144-1.213-.447-2.31-1.427-.854-.762-1.43-1.703-1.598-1.99-.168-.288-.018-.444.126-.588.13-.13.288-.336.432-.504.144-.168.192-.288.288-.48.096-.192.048-.36-.024-.504-.072-.144-.648-1.56-.888-2.137-.234-.562-.472-.486-.648-.495l-.552-.01c-.192 0-.504.072-.768.36-.264.288-1.008.984-1.008 2.4 0 1.416 1.032 2.784 1.176 2.976.144.192 2.03 3.1 4.918 4.347.687.297 1.223.474 1.641.606.689.219 1.316.188 1.812.114.553-.083 1.698-.694 1.938-1.365.24-.67.24-1.245.168-1.365-.072-.12-.264-.192-.552-.336z"/></svg>
+</a>
+
+<div id="wa-modal-overlay">
+  <div id="wa-modal">
+    <button type="button" id="wa-modal-close" aria-label="Close">&times;</button>
+    <h3>Chat with us on WhatsApp</h3>
+    <p class="wa-modal-sub">Share a few quick details so our team can help you faster.</p>
+    <form id="wa-modal-form">
+      <div class="field">
+        <label for="wname">Name*</label>
+        <input type="text" id="wname" required placeholder="Your name">
+      </div>
+      <div class="field">
+        <label for="wcity">City*</label>
+        <input type="text" id="wcity" required placeholder="Your city">
+      </div>
+      <div class="field">
+        <label for="wrequirement">Requirement</label>
+        <select id="wrequirement">
+          <option value="Corporate Gifting">Corporate Gifting</option>
+          <option value="Wedding Gifting">Wedding Gifting</option>
+          <option value="Divine / Pooja Gifting">Divine / Pooja Gifting</option>
+          <option value="Home Decor">Home Décor</option>
+          <option value="Franchise Enquiry">Franchise Enquiry</option>
+          <option value="Bulk Order">Bulk Order</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="wbudget">Budget</label>
+        <select id="wbudget">
+          <option value="₹1,000 – ₹2,500">₹1,000 – ₹2,500</option>
+          <option value="₹2,500 – ₹5,000">₹2,500 – ₹5,000</option>
+          <option value="₹5,000 – ₹10,000">₹5,000 – ₹10,000</option>
+          <option value="₹10,000 – ₹25,000">₹10,000 – ₹25,000</option>
+          <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option>
+          <option value="₹50,000+">₹50,000+</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="wqty">Approx. quantity</label>
+        <input type="text" id="wqty" placeholder="e.g. 50 pieces">
+      </div>
+      <button type="submit" id="wa-modal-submit">Continue to WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const WHATSAPP_NUMBER = "919910926757";
+
+function waLink(text) {
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+}
+
+// Floating WhatsApp button -> opens the quick-enquiry modal instead of chatting directly
+const waModalOverlay = document.getElementById('wa-modal-overlay');
+const waModalForm = document.getElementById('wa-modal-form');
+
+document.getElementById('wa-float').addEventListener('click', (e) => {
+  e.preventDefault();
+  waModalOverlay.classList.add('open');
+});
+document.getElementById('wa-modal-close').addEventListener('click', () => {
+  waModalOverlay.classList.remove('open');
+});
+waModalOverlay.addEventListener('click', (e) => {
+  if (e.target === waModalOverlay) waModalOverlay.classList.remove('open');
+});
+
+waModalForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('wname').value.trim();
+  const city = document.getElementById('wcity').value.trim();
+  const requirement = document.getElementById('wrequirement').value;
+  const budget = document.getElementById('wbudget').value;
+  const qty = document.getElementById('wqty').value.trim();
+
+  let text = `Hi Ekaani! I'd like to enquire.\nName: ${name}`;
+  text += `\nCity: ${city}`;
+  text += `\nRequirement: ${requirement}`;
+  text += `\nBudget: ${budget}`;
+  if (qty) text += `\nQuantity: ${qty}`;
+
+  window.open(waLink(text), '_blank');
+  waModalOverlay.classList.remove('open');
+  waModalForm.reset();
+});
+
+document.querySelectorAll('.enquire-mini').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.getAttribute('data-item');
+    window.open(waLink("Hi Ekaani! I'm interested in: " + item + ". Could you share pricing and MOQ?"), '_blank');
+  });
+});
+
+// Lead form -> WhatsApp
+document.getElementById('lead-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('fname').value.trim();
+  const company = document.getElementById('fcompany').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const category = document.getElementById('fcategory').value;
+  const qty = document.getElementById('fqty').value.trim();
+  const budget = document.getElementById('fbudget').value;
+  const msg = document.getElementById('fmsg').value.trim();
+
+  let text = `Hi Ekaani! I'd like a quote.\nName: ${name}`;
+  if (company) text += `\nCompany/Occasion: ${company}`;
+  text += `\nCategory: ${category}`;
+  if (qty) text += `\nQuantity: ${qty}`;
+  text += `\nBudget: ${budget}`;
+  text += `\nMy WhatsApp: ${phone}`;
+  if (msg) text += `\nMessage: ${msg}`;
+
+  window.open(waLink(text), '_blank');
+});
+
+// Scroll progress
+const progress = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = scrolled + '%';
+}, { passive: true });
+
+// Nav pill scroll + active state
+const pills = document.querySelectorAll('.pill');
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    const el = document.getElementById(p.dataset.target);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('drawer').classList.remove('open');
+  });
+});
+const sectionsForNav = [...document.querySelectorAll('.catgroup')];
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      pills.forEach(p => p.classList.toggle('active', p.dataset.target === entry.target.id));
+    }
+  });
+}, { rootMargin: '-45% 0px -45% 0px' });
+sectionsForNav.forEach(s => navObserver.observe(s));
+
+// Reveal on scroll
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Mobile drawer
+const hamburger = document.getElementById('hamburger');
+const drawer = document.getElementById('drawer');
+hamburger.addEventListener('click', () => drawer.classList.add('open'));
+document.getElementById('drawerClose').addEventListener('click', () => drawer.classList.remove('open'));
+</script>
+</body>
+</html>
