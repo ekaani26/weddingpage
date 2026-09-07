@@ -3628,7 +3628,7 @@ function gtag_report_conversion(url) {
     </div>
     <div class="cta-buttons">
       <button class="btn-primary" data-open-quote data-product="General enquiry">Get a Quote</button>
-      <a class="btn-ghost" href="Ekaani-Gifting-Collection.pdf" download>Download Catalogue (PDF)</a>
+      <a class="btn-ghost" href="Ekaani-Gifting-Collection.pdf">Download Catalogue (PDF)</a>
     </div>
   </div>
 </section>
@@ -3655,7 +3655,7 @@ function gtag_report_conversion(url) {
     </div>
     <div class="foot-col">
       <h4>Catalogue</h4>
-      <a href="Ekaani-Gifting-Collection.pdf" download>Download PDF</a>
+      <a href="Ekaani-Gifting-Collection.pdf">Download PDF</a>
       <button data-open-quote data-product="General enquiry" style="background:none;border:none;padding:0;font-family:inherit;font-size:13.5px;color:var(--ink-soft);cursor:pointer;text-align:left;">Request a Quote</button>
     </div>
   </div>
@@ -3667,7 +3667,7 @@ function gtag_report_conversion(url) {
 
 <!-- ============ MOBILE STICKY BAR ============ -->
 <div class="mobile-bar">
-  <a href="Ekaani-Gifting-Collection.pdf" download>Download Catalogue</a>
+  <a href="Ekaani-Gifting-Collection.pdf">Download Catalogue</a>
   <button class="mb-quote" data-open-quote data-product="General enquiry">Get a Quote</button>
 </div>
 
@@ -3689,8 +3689,7 @@ function gtag_report_conversion(url) {
     </div>
     <div class="drawer-body">
       <form id="quoteForm" action="https://formsubmit.co/testmailekaani@gmail.com" method="POST">
-        <input type="hidden" name="_next" value="https://www.ekaani.com/pages/premium-silver-gifting">
-    <input type="hidden" name="_subject" value="New Quote Request — Ekaani Gifting Website">
+        <input type="hidden" name="_subject" value="New Quote Request — Ekaani Gifting Website">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="Reference" id="qRef" value="General enquiry">
@@ -3740,109 +3739,143 @@ function gtag_report_conversion(url) {
 </aside>
 
 
-<script>
+
+<script id="ekaani-form-and-catalogue-handler">
 document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('quoteForm');
   if (!form) return;
 
-  var conversionFired = false;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    if (conversionFired) return;
-    conversionFired = true;
-
-    var submitted = false;
-
-    function continueSubmission() {
-      if (submitted) return;
-      submitted = true;
-      HTMLFormElement.prototype.submit.call(form);
-    }
-
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'conversion', {
-        'send_to': 'AW-706143010/xnEuCL3ymfAcEKLG29AC',
-        'value': 1.0,
-        'currency': 'INR',
-        'event_callback': continueSubmission
-      });
-
-      // Fallback so the lead is still submitted if Google's callback
-      // is delayed or unavailable.
-      setTimeout(continueSubmission, 1500);
-    } else {
-      continueSubmission();
-    }
-  });
-});
-</script>
-
-
-<script id="catalogue-form-gate">
-document.addEventListener('DOMContentLoaded', function () {
-  var quoteForm = document.getElementById('quoteForm');
-  if (!quoteForm) return;
-
   var catalogueUrl = 'Ekaani-Gifting-Collection.pdf';
   var catalogueRequested = false;
+  var submitting = false;
 
-  // Any "Download Catalogue" link opens the existing quote form instead of
-  // downloading immediately.
-  var catalogueLinks = Array.from(document.querySelectorAll('a[href*="Ekaani-Gifting-Collection.pdf"]'));
-
-  catalogueLinks.forEach(function (link) {
+  // Catalogue links use the SAME quote form.
+  document.querySelectorAll('a[href*="Ekaani-Gifting-Collection.pdf"]').forEach(function (link) {
     link.removeAttribute('download');
 
     link.addEventListener('click', function (e) {
       e.preventDefault();
       catalogueRequested = true;
-      quoteForm.classList.add('catalogue-gate');
+      form.classList.add('catalogue-gate');
 
-      // Use the site's existing quote-opening mechanism.
+      // Tell the existing quote drawer which enquiry type was requested.
+      var ref = document.getElementById('qRef');
+      if (ref) ref.value = 'Catalogue Download';
+
+      // Trigger the site's existing quote drawer opener.
       var opener = document.querySelector('[data-open-quote]');
       if (opener) {
         opener.click();
       } else {
-        quoteForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        var firstInput = quoteForm.querySelector('input:not([type="hidden"]), textarea, select');
-        if (firstInput) setTimeout(function () { firstInput.focus(); }, 500);
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var firstField = form.querySelector('input:not([type="hidden"]), textarea, select');
+        if (firstField) {
+          setTimeout(function () { firstField.focus(); }, 500);
+        }
       }
     });
   });
 
-  // If the form has already been submitted through the Google Ads handler,
-  // this listener is attached in capture phase so it can prepare the
-  // catalogue action before the native FormSubmit navigation.
-  quoteForm.addEventListener('submit', function () {
-    if (!catalogueRequested) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-    // Store the request so it survives FormSubmit's redirect.
-    try {
-      sessionStorage.setItem('ekaani_catalogue_requested', '1');
-      sessionStorage.setItem('ekaani_catalogue_url', catalogueUrl);
-    } catch (err) {}
-  }, true);
+    if (submitting) return;
+    submitting = true;
 
-  // If FormSubmit returns to this page, automatically download the catalogue.
-  // This also supports pages configured to return here after submission.
-  try {
-    if (sessionStorage.getItem('ekaani_catalogue_requested') === '1') {
-      sessionStorage.removeItem('ekaani_catalogue_requested');
-      var savedUrl = sessionStorage.getItem('ekaani_catalogue_url') || catalogueUrl;
-      sessionStorage.removeItem('ekaani_catalogue_url');
-
-      setTimeout(function () {
-        var a = document.createElement('a');
-        a.href = savedUrl;
-        a.download = 'Ekaani-Gifting-Collection.pdf';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-      }, 700);
+    var submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.dataset.originalText = submitButton.textContent;
+      submitButton.textContent = catalogueRequested ? 'Submitting & Preparing Catalogue…' : 'Sending…';
     }
-  } catch (err) {}
+
+    // Send the lead directly to FormSubmit without navigating away.
+    var formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(function () {
+      fireGoogleConversion();
+    })
+    .catch(function () {
+      // FormSubmit can reject JSON/CORS in some configurations even after
+      // accepting the submission. Still fire the conversion and complete
+      // the user's requested action.
+      fireGoogleConversion();
+    });
+
+    function fireGoogleConversion() {
+      var completed = false;
+
+      function finish() {
+        if (completed) return;
+        completed = true;
+
+        if (catalogueRequested) {
+          downloadCatalogue();
+        } else {
+          showFormSuccess();
+        }
+      }
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-706143010/xnEuCL3ymfAcEKLG29AC',
+          'value': 1.0,
+          'currency': 'INR',
+          'event_callback': finish
+        });
+
+        // Don't make the user wait if Google doesn't call back.
+        setTimeout(finish, 1200);
+      } else {
+        finish();
+      }
+    }
+
+    function downloadCatalogue() {
+      showFormSuccess('Your catalogue is ready. Downloading now…');
+
+      var link = document.createElement('a');
+      link.href = catalogueUrl;
+      link.download = 'Ekaani-Gifting-Collection.pdf';
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      resetAfterCompletion();
+    }
+
+    function showFormSuccess(message) {
+      var successPane = document.getElementById('successPane');
+
+      if (successPane) {
+        successPane.style.display = '';
+        successPane.classList.add('is-visible');
+
+        var messageNode = successPane.querySelector('[data-success-message], .success-message, p');
+        if (messageNode && message) messageNode.textContent = message;
+      }
+
+      if (!catalogueRequested) {
+        resetAfterCompletion();
+      }
+    }
+
+    function resetAfterCompletion() {
+      submitting = false;
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = submitButton.dataset.originalText || 'Send Enquiry';
+      }
+    }
+  });
 });
 </script>
 
