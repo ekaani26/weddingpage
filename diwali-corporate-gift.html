@@ -2,16 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Event snippet for Diwali Corporate Gift ekaani conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-706143010/OEChCMK3ge8cEKLG29AC',
-      'value': 1.0,
-      'currency': 'INR'
-  });
-</script>
-
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J53L2G55B"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1017,7 +1008,7 @@ document.querySelectorAll('.enquire-mini').forEach(btn => {
   });
 });
 
-// Lead form -> WhatsApp
+// Lead form -> Google Ads conversion + WhatsApp
 document.getElementById('lead-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const name = document.getElementById('fname').value.trim();
@@ -1028,15 +1019,42 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
   const budget = document.getElementById('fbudget').value;
   const msg = document.getElementById('fmsg').value.trim();
 
-  let text = `Hi Ekaani! I'd like a quote.\nName: ${name}`;
-  if (company) text += `\nCompany/Occasion: ${company}`;
-  text += `\nCategory: ${category}`;
-  if (qty) text += `\nQuantity: ${qty}`;
-  text += `\nBudget: ${budget}`;
-  text += `\nMy WhatsApp: ${phone}`;
-  if (msg) text += `\nMessage: ${msg}`;
+  let text = `Hi Ekaani! I'd like a quote.
+Name: ${name}`;
+  if (company) text += `
+Company/Occasion: ${company}`;
+  text += `
+Category: ${category}`;
+  if (qty) text += `
+Quantity: ${qty}`;
+  text += `
+Budget: ${budget}`;
+  text += `
+My WhatsApp: ${phone}`;
+  if (msg) text += `
+Message: ${msg}`;
 
-  window.open(waLink(text), '_blank');
+  // Google Ads conversion fires only after the main lead form is submitted.
+  let opened = false;
+  const openWhatsApp = function() {
+    if (opened) return;
+    opened = true;
+    window.open(waLink(text), '_blank');
+  };
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-706143010/OEChCMK3ge8cEKLG29AC',
+      'value': 1.0,
+      'currency': 'INR',
+      'event_callback': openWhatsApp
+    });
+
+    // Fallback: keep WhatsApp working if the Google callback is delayed.
+    setTimeout(openWhatsApp, 1000);
+  } else {
+    openWhatsApp();
+  }
 });
 
 // Scroll progress
