@@ -3724,6 +3724,46 @@ function gtag_report_conversion(url) {
   </div>
 </aside>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('quoteForm');
+  if (!form) return;
+
+  var conversionFired = false;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (conversionFired) return;
+    conversionFired = true;
+
+    var submitted = false;
+
+    function continueSubmission() {
+      if (submitted) return;
+      submitted = true;
+      HTMLFormElement.prototype.submit.call(form);
+    }
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-706143010/xnEuCL3ymfAcEKLG29AC',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': continueSubmission
+      });
+
+      // Fallback so the lead is still submitted if Google's callback
+      // is delayed or unavailable.
+      setTimeout(continueSubmission, 1500);
+    } else {
+      continueSubmission();
+    }
+  });
+});
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>
