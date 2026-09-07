@@ -209,6 +209,20 @@ function gtag_report_conversion(url) {
   .hero-action{animation:none;}
 }
 </style>
+
+<style id="ekaani-fixed-screen-overflow">
+html, body { width:100%; max-width:100%; overflow-x:hidden !important; }
+*, *::before, *::after { box-sizing:border-box; }
+img, video, iframe, svg { max-width:100%; }
+section, header, footer, main, .container, .topbar-inner { max-width:100%; }
+.clients-section, .clients-track, .clients-set { overflow:hidden; }
+.clients-track { max-width:none; }
+@media (max-width: 768px) {
+  body { overflow-x:hidden !important; position:relative; }
+  .clients-section { width:100%; overflow:hidden !important; }
+  .clients-track { transform:translate3d(0,0,0); }
+}
+</style>
 </head>
 <body>
 <!-- ============ TOP BAR ============ -->
