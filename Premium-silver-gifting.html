@@ -70,6 +70,32 @@ function gtag_report_conversion(url) {
     font-size: 15px;
   }
 </style>
+
+<style id="clients-slider-styles">
+.clients-section{padding:56px 0 62px;background:#fff;overflow:hidden}
+.clients-head{text-align:center;margin:0 auto 30px;padding:0 20px}
+.clients-head .kicker{display:block}
+.clients-head h2{margin:8px 0 0;font-size:clamp(24px,3vw,38px);line-height:1.15}
+.clients-slider{width:100%;overflow:hidden;position:relative}
+.clients-track{display:flex;width:max-content;animation:ekaaniClientScroll 28s linear infinite;will-change:transform}
+.clients-set{display:flex;align-items:center;gap:clamp(28px,4vw,72px);padding-right:clamp(28px,4vw,72px);flex-shrink:0}
+.client-logo{width:clamp(130px,14vw,190px);height:76px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;background:#fff}
+.client-logo img{display:block;width:100%;height:100%;object-fit:contain;max-width:180px;max-height:64px}
+.clients-slider:hover .clients-track{animation-play-state:paused}
+@keyframes ekaaniClientScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:767px){
+  .clients-section{padding:42px 0 48px}
+  .clients-head{margin-bottom:22px}
+  .clients-track{animation-duration:22s}
+  .clients-set{gap:22px;padding-right:22px}
+  .client-logo{width:120px;height:62px}
+  .client-logo img{max-width:115px;max-height:52px}
+}
+@media (prefers-reduced-motion:reduce){
+  .clients-track{animation:none}
+}
+</style>
+
 </head>
 <body>
 <!-- ============ TOP BAR ============ -->
@@ -115,6 +141,38 @@ function gtag_report_conversion(url) {
 <div class="value-item"><span class="num">3</span><span class="lbl">Verticals — wedding, corporate, franchise</span></div>
 <div class="value-item"><span class="num">1</span><span class="lbl">WhatsApp line for every enquiry</span></div>
 </div>
+</section>
+
+<!-- ============ CLIENTS SLIDER ============ -->
+<section class="clients-section" aria-label="Selected clients">
+  <div class="clients-head">
+    <span class="kicker">TRUSTED BY</span>
+    <h2>Brands that gift with Ekaani</h2>
+  </div>
+  <div class="clients-slider">
+    <div class="clients-track">
+      <div class="clients-set">
+        <div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/EMAAR.png?v=1783321914" alt="Emaar"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/M3M.png?v=1783321914" alt="M3M"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADITYA_BIRLA.png?v=1783321914" alt="Aditya Birla"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani"></div>
+      </div>
+      <div class="clients-set" aria-hidden="true">
+        <div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/KOTAK.png?v=1783321913" alt="Kotak"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/RELIANCE.png?v=1783321913" alt="Reliance"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/JK_LAKSHMI_CEMENT.png?v=1783321913" alt="JK Lakshmi Cement"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/GAURS.png?v=1783321913" alt="Gaurs"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/EMAAR.png?v=1783321914" alt="Emaar"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/M3M.png?v=1783321914" alt="M3M"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/ADITYA_BIRLA.png?v=1783321914" alt="Aditya Birla"></div>
+<div class="client-logo"><img src="https://cdn.shopify.com/s/files/1/0748/5014/0446/files/HIRANANDANI.png?v=1783321915" alt="Hiranandani"></div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- ============ VERTICALS ============ -->
 <section class="verticals" id="verticals">
