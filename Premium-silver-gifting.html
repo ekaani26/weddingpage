@@ -96,6 +96,15 @@ function gtag_report_conversion(url) {
 }
 </style>
 
+
+<style id="gift-for-grid-fix">
+@media (max-width: 767px){
+  .vert-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:14px !important;}
+  .vert-card{min-width:0;}
+  .vert-card h3{font-size:17px;line-height:1.2;}
+  .vert-card p{font-size:13px;line-height:1.5;}
+}
+</style>
 </head>
 <body>
 <!-- ============ TOP BAR ============ -->
@@ -123,15 +132,6 @@ function gtag_report_conversion(url) {
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
 <img alt="Ekaani premium silver gifting collection" class="hero-img" src="images/p000.jpg"/>
-<div class="hero-content">
-<span class="hero-eyebrow">THE COMPLETE COLLECTION — 2026</span>
-<h1>Silverware gifting, built for <em>every occasion</em> that matters</h1>
-<p>306 handpicked silver &amp; silver-plated designs across wedding gifting, corporate gifting, home décor and franchise ranges — from Ekaani's 15+ stores across India.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#collection">Browse the Collection</a>
-<button class="btn-ghost" data-open-quote="" data-product="General enquiry">Get a Quote</button>
-</div>
-</div>
 </section>
 <!-- ============ VALUE STRIP ============ -->
 <section class="value-strip">
@@ -190,11 +190,6 @@ function gtag_report_conversion(url) {
 <h3>Corporate Gifting</h3>
 <p>Bulk-friendly frames, trays and desk pieces for festive hampers, employee milestones and client gifting programmes.</p>
 <button class="vert-link" data-open-quote="" data-product="Corporate gifting enquiry" style="background:none;border:none;padding:0;font-family:inherit;cursor:pointer;">Enquire for corporate →</button>
-</div>
-<div class="vert-card" id="franchise">
-<h3>Franchise Opportunity</h3>
-<p>Bring the Ekaani gifting format to your city. Our team shares territory, investment and margin details on request.</p>
-<button class="vert-link" data-open-quote="" data-product="Franchise enquiry" style="background:none;border:none;padding:0;font-family:inherit;cursor:pointer;">Ask about franchise →</button>
 </div>
 </div>
 </section>
