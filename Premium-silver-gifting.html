@@ -61,6 +61,20 @@ function gtag_report_conversion(url) {
   }
 }
 </script>
+
+<style id="catalogue-gate-styles">
+  #quoteForm.catalogue-gate .drawer-submit::after {
+    content: " & Download Catalogue";
+  }
+  #quoteForm.catalogue-gate .drawer-submit {
+    font-size: 0;
+  }
+  #quoteForm.catalogue-gate .drawer-submit::before {
+    content: "Submit & Download Catalogue";
+    font-size: 15px;
+  }
+</style>
+
 </head>
 <body>
 
@@ -3675,7 +3689,8 @@ function gtag_report_conversion(url) {
     </div>
     <div class="drawer-body">
       <form id="quoteForm" action="https://formsubmit.co/testmailekaani@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Quote Request — Ekaani Gifting Website">
+        <input type="hidden" name="_next" value="https://www.ekaani.com/pages/premium-silver-gifting">
+    <input type="hidden" name="_subject" value="New Quote Request — Ekaani Gifting Website">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="Reference" id="qRef" value="General enquiry">
@@ -3761,6 +3776,73 @@ document.addEventListener('DOMContentLoaded', function () {
       continueSubmission();
     }
   });
+});
+</script>
+
+
+<script id="catalogue-form-gate">
+document.addEventListener('DOMContentLoaded', function () {
+  var quoteForm = document.getElementById('quoteForm');
+  if (!quoteForm) return;
+
+  var catalogueUrl = 'Ekaani-Gifting-Collection.pdf';
+  var catalogueRequested = false;
+
+  // Any "Download Catalogue" link opens the existing quote form instead of
+  // downloading immediately.
+  var catalogueLinks = Array.from(document.querySelectorAll('a[href*="Ekaani-Gifting-Collection.pdf"]'));
+
+  catalogueLinks.forEach(function (link) {
+    link.removeAttribute('download');
+
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      catalogueRequested = true;
+      quoteForm.classList.add('catalogue-gate');
+
+      // Use the site's existing quote-opening mechanism.
+      var opener = document.querySelector('[data-open-quote]');
+      if (opener) {
+        opener.click();
+      } else {
+        quoteForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var firstInput = quoteForm.querySelector('input:not([type="hidden"]), textarea, select');
+        if (firstInput) setTimeout(function () { firstInput.focus(); }, 500);
+      }
+    });
+  });
+
+  // If the form has already been submitted through the Google Ads handler,
+  // this listener is attached in capture phase so it can prepare the
+  // catalogue action before the native FormSubmit navigation.
+  quoteForm.addEventListener('submit', function () {
+    if (!catalogueRequested) return;
+
+    // Store the request so it survives FormSubmit's redirect.
+    try {
+      sessionStorage.setItem('ekaani_catalogue_requested', '1');
+      sessionStorage.setItem('ekaani_catalogue_url', catalogueUrl);
+    } catch (err) {}
+  }, true);
+
+  // If FormSubmit returns to this page, automatically download the catalogue.
+  // This also supports pages configured to return here after submission.
+  try {
+    if (sessionStorage.getItem('ekaani_catalogue_requested') === '1') {
+      sessionStorage.removeItem('ekaani_catalogue_requested');
+      var savedUrl = sessionStorage.getItem('ekaani_catalogue_url') || catalogueUrl;
+      sessionStorage.removeItem('ekaani_catalogue_url');
+
+      setTimeout(function () {
+        var a = document.createElement('a');
+        a.href = savedUrl;
+        a.download = 'Ekaani-Gifting-Collection.pdf';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }, 700);
+    }
+  } catch (err) {}
 });
 </script>
 
